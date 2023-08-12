@@ -3224,7 +3224,7 @@ input, select, textarea {
 		/* Footer */
 
 			#footer {
-				margin-top: -100px;
+				margin-top: 0px;
 				padding-left: 1em;
 				padding-right: 1em;
 			}
