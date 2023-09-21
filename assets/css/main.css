@@ -1,5 +1,7 @@
 @import url("fontawesome-all.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,900;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 
 /*
 	Directive by HTML5 UP
@@ -223,6 +225,21 @@ input, select, textarea {
 		font-style: normal;
 		padding: 5px 0 5px 25px;
 	}
+
+/* Code */
+.code-block {
+    font-family: 'Share Tech Mono', monospace;
+    /* Other styles for code blocks */
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+code {
+    font-family: 'Share Tech Mono', monospace;
+    /* Other styles for code within paragraphs */
+    background-color: #f1f1f1;
+    padding: 2px 4px;
+}
 
 /* Container */
 
