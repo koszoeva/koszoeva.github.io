@@ -97,9 +97,9 @@ S3Uri:</p>
 is the ARN</li>
 <li><em>mykey</em> is the key</li>
 </ul>
-<p><strong>NOTE:</strong> Similar to bucket names, you can also use
+<blockquote class="blockquote-orange"><strong>NOTE:</strong> Similar to bucket names, you can also use
 prefixes with access point ARNs for the S3Uri. For example:
-<code>s3://arn:aws:s3:us-west-2:123456789012:accesspoint/myaccesspoint/myprefix/</code></p>
+<code>s3://arn:aws:s3:us-west-2:123456789012:accesspoint/myaccesspoint/myprefix/</code></blockquote>
 
 <!--Order of Path Arguments-->
 
@@ -138,13 +138,15 @@ indicates a local directory, S3 prefix, or S3 bucket, it can end with a
 forward slash or backward slash. If the destination ends with a slash, the
 destination file or object adopts the name of the source file or object.
 Otherwise, the file or object is saved under the name provided.</p>
-<p><strong>NOTE:</strong> The path argument type determines whether to
+
+<blockquote class="blockquote-orange"><p><strong>NOTE:</strong> The path argument type determines whether to
 use forward slash or backward slash as a separator:</p>
 <ul>
 <li>Separators in <strong>LocalPath</strong> arguments should match
 the preference of the operating system.</li>
 <li>In an <strong>S3Uri</strong>, forward slash must be used.</li>
 </ul>
+</blockquote>
 
 <!--Directory and S3 Prefix Operations-->
 
@@ -199,8 +201,8 @@ or include a particular file or object.</p>
   </table>
 </div>
 
-<p><strong>NOTE:</strong> UNIX-style wildcards in a command’s path
-arguments are currently not supported.</p>
+<blockquote class="blockquote-orange"><strong>NOTE:</strong> UNIX-style wildcards in a command’s path
+arguments are currently not supported.</blockquote>
 <p>A command can contain multiple filters. To do this, use the
 <code>--exclude</code> or <code>--include</code> argument multiple
 times. For example: <code>--include "*.txt" --include "*.png"</code></p>

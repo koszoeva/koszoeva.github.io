@@ -226,6 +226,12 @@ input, select, textarea {
 		padding: 5px 0 5px 25px;
 	}
 
+	.blockquote-orange {
+		border-left: solid 0.5em #fda400;
+		font-style: normal;
+		padding: 5px 0 5px 25px;
+	}
+
 /* Code */
 .code-block {
     font-family: 'Share Tech Mono', monospace;
