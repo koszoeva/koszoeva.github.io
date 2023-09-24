@@ -1,0 +1,886 @@
+<!DOCTYPE HTML>
+<!--
+	Directive by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Portfolio | Éva Kószó</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+	
+
+	
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<div id="header">
+			<a href="https://koszoeva.github.io">
+			<img src="images/logo_ke.png" alt="" width="320" />
+			<p style="font-family: 'Playfair Display';">Technical Writer & Illustrator</p>
+			<p> </p>	
+			<h2 style="font-family: 'Poppins'; font-weight: 600;">PORTFOLIO</h2>
+		</a>
+		</div>
+
+			<!--TW comment-->
+
+				<div class="box container">
+					<header style="padding-bottom: 0% ;">
+						<h2>API guide sample</h2>
+						<p style="text-transform: none; text-align: left">Scroll down for a high-level overview of the  
+							artist-related endpoints of the Spotify Web API. This guide intends to give a simplified, short summary, based on the very comprehensive
+							and high-quality <a href="https://developer.spotify.com/documentation/web-api">Spotify Web API documentation</a>. <br>
+							The guide was written in Markdown and converted to HTML using Pandoc. 
+							<br>The HTML output was slightly adjusted to align with the portfolio template.</p>
+							<p><a href="artist-endpoints.md" target="new" class="button">Check out the markdown file</a>
+						</p>
+					</header>
+				</div>
+
+
+				<!--Content-->
+
+				<div class="box container" style="background-color: #ffffff; border: 4px solid #15e003;">
+					<section style="background-color: #15e003;">
+						<h2 id="album-related-endpoints-in-the-spotify-web-api">Artist-Related Endpoints<br>
+              in the Spotify Web API</h2>
+						</section><section>
+<body>
+
+<!--Intro-->
+
+<p>This guide provides you with a brief overview of the artist-related
+API endpoints.</p>
+
+<!--Overview-->
+
+<h2 id="overview" style="background-color: #15e003">Overview</h2>
+<p>The following table provides you with an overview of the Spotify Web
+API endpoints related to artists.</p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 26%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Category</strong></th>
+<th><strong>Endpoint</strong></th>
+<th><strong>Method</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#get-artist"><strong>Get Artist</strong></a></td>
+<td><code>artists/{id}</code></td>
+<td><code>GET</code></td>
+<td>Retrieve the catalog information for an artist by their Spotify
+ID.</td>
+</tr>
+<tr class="even">
+<td><a href="#get-several-artists"><strong>Get Several
+Artists</strong></a></td>
+<td><code>/artists</code></td>
+<td><code>GET</code></td>
+<td>Retrieve the catalog information for multiple artists by their
+Spotify IDs.</td>
+</tr>
+<tr class="odd">
+<td><a href="#get-artists-albums"><strong>Get Artist’s
+Albums</strong></a></td>
+<td><code>/artists/{id}/albums</code></td>
+<td><code>GET</code></td>
+<td>Get the catalog information of an artist’s albums.</td>
+</tr>
+<tr class="even">
+<td><a href="#get-artists-top-tracks"><strong>Get Artist’s Top
+Tracks</strong></a></td>
+<td><code>/artists/{id}/top-tracks</code></td>
+<td><code>GET</code></td>
+<td>Get the catalog information of an artist’s top tracks by
+country.</td>
+</tr>
+<tr class="odd">
+<td><a href="#get-artists-related-artists"><strong>Get Artist’s Related
+Artists</strong></a></td>
+<td><code>/artists/{id}/related-artists</code></td>
+<td><code>GET</code></td>
+<td>Retrieve a list of artists that are similar to a specific artist
+based on Spotify users’ listening history.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!--Get artist-->
+
+<h2 id="get-artist" style="background-color: #15e003">Get Artist</h2>
+<p>Retrieve the catalog information for an artist by their Spotify
+ID.</p>
+<p><strong>Endpoint:</strong> <code>artists/{id}</code></p>
+<h3 id="request" style="text-align: left">Request</h3>
+<p><strong>HTTP Method:</strong> <code>GET</code></p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Parameter</strong></th>
+<th><strong>Necessity</strong></th>
+<th><strong>Type</strong></th>
+
+<th><strong>Description</strong></th>
+<th><strong>Example values</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>Required</td>
+<td>String</td>
+
+<td>The Spotify ID of the artist.</td>
+<td><code>4k1ELeJKT1ISyDv8JivPpB</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="response-success" style="text-align: left">Response – Success</h3>
+<p>When the response has been successfully completed, a
+<code>200 OK</code> response is returned along with the information
+listed in the following table.</p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 26%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Parameter</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Additional data included</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>external_urls</code></td>
+<td>Object</td>
+<td>External URL of the artist.</td>
+<td><code>spotify</code>: Spotify URL of the object.</td>
+</tr>
+<tr class="even">
+<td><code>followers</code></td>
+<td>String</td>
+<td>Information about the artist’s followers.</td>
+<td><code>total</code>: The total number of followers.</td>
+</tr>
+<tr class="odd">
+<td><code>genres</code></td>
+<td>Array of strings</td>
+<td>The list of genres associated with the artist. For example:
+<code>["Punkˇ, ˇHardcore"]</code></td>
+<td>None.</td>
+</tr>
+<tr class="even">
+<td><code>href</code></td>
+<td>String</td>
+<td>A link to the endpoint that provides full details on the
+artist.</td>
+<td>None.</td>
+</tr>
+<tr class="odd">
+<td><code>images</code></td>
+<td>Array of ImageObjects</td>
+<td>Images of the artist.</td>
+<td><code>url</code>: The URL of the image.<br/> <code>height</code>:
+The height of the image.<br/><code>width</code>: The width of the
+image.</td>
+</tr>
+<tr class="even">
+<td><code>name</code></td>
+<td>String</td>
+<td>The name of the artist.</td>
+<td>None.</td>
+</tr>
+<tr class="odd">
+<td><code>popularity</code></td>
+<td>Integer</td>
+<td>The popularity of the artist on a scale between <em>0</em> (the
+least popular) and <em>100</em> (the most popular).</td>
+<td>None.</td>
+</tr>
+<tr class="even">
+<td><code>type</code></td>
+<td>String</td>
+<td>The object type; always <code>artist</code> for this response
+type.</td>
+<td>None.</td>
+</tr>
+<tr class="odd">
+<td><code>uri</code></td>
+<td>String</td>
+<td>The Spotify URI of the artist.</td>
+<td>None.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="response-error" style="text-align: left">Response – Error</h3>
+<p>When the response cannot be successfully completed, one of the
+following error messages is returned.</p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Response</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>401 Unauthorized</code></td>
+<td>Invalid or expired token.</td>
+<td>Re-authenticate.</td>
+</tr>
+<tr class="even">
+<td><code>403 Forbidden</code></td>
+<td>Request refused by the server.</td>
+<td>Do not repeat the request.</td>
+</tr>
+<tr class="odd">
+<td><code>429 Too Many Requests</code></td>
+<td>Too many requests from the user’s IP.</td>
+<td>Repeat the request later.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!--Get several artists-->
+
+<h2 id="get-several-artists" style="background-color: #15e003">Get Several Artists</h2>
+<p>Retrieve the catalog information for multiple artists by their
+Spotify IDs.</p>
+<p><strong>Endpoint:</strong> <code>/artists</code></p>
+<h3 id="request-1" style="text-align: left">Request</h3>
+<p><strong>HTTP Method:</strong> <code>GET</code></p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 17%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Parameter</strong></th>
+<th><strong>Necessity</strong></th>
+<th><strong>Type</strong></th>
+
+<th><strong>Description</strong></th>
+<th><strong>Example values</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ids</code></td>
+<td><strong>Required</strong></td>
+<td>String</td>
+
+<td>A comma-separated list of the Spotify IDs of the artists. One
+request can contain maximum 50 IDs.</td>
+<td><code>5LfGQac0EIXyAN8aUwmNAQ, 6i0KVTOvm96T55mbp742ks</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="response-success-1" style="text-align: left">Response – Success</h3>
+<p>When the response has been successfully completed, a
+<code>200 OK</code> response is returned along with the information
+listed in the following table.</p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 26%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Parameter</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Additional data included</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>artists</code></td>
+<td>Array of ArtistObjects</td>
+<td>A list of the artist.</td>
+<td><code>external_urls</code>: External URL of the artist.
+</br></br><code>followers</code>: Information about the artist’s followers.
+</br></br><code>genres</code>: The list of genres associated with the artist.
+For example: <code>["Punk", "Hardcore"]</code> </br></br><code>href</code>: A
+link to the endpoint that provides full details on the artist.
+</br></br><code>id</code>: The Spotify ID of the
+artist.</br></br><code>images</code>: Images of the artist.
+</br></br><code>name</code>: The name of the artist.
+</br></br><code>popularity</code>: The popularity of the artist on a scale
+between <em>0</em> (the least popular) and <em>100</em> (the most
+popular). </br></br><code>type</code>: The object type; always
+</br></br><code>uri</code>: The Spotify URI of the artist.</br></br></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="response-error-1" style="text-align: left">Response – Error</h3>
+<p>When the response cannot be successfully completed, one of the
+following error messages is returned.</p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Response</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>401 Unauthorized</code></td>
+<td>Invalid or expired token.</td>
+<td>Re-authenticate.</td>
+</tr>
+<tr class="even">
+<td><code>403 Forbidden</code></td>
+<td>Request refused by the server.</td>
+<td>Do not repeat the request.</td>
+</tr>
+<tr class="odd">
+<td><code>429 Too Many Requests</code></td>
+<td>Too many requests from the user’s IP.</td>
+<td>Repeat the request later.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!--Get artist's albums-->
+
+<h2 id="get-artists-albums" style="background-color: #15e003">Get Artist’s Albums</h2>
+<p>Get the catalog information of an artist’s albums.</p>
+<p><strong>Endpoint:</strong> <code>/artists/{id}/albums</code></p>
+<h3 id="request-2" style="text-align: left">Request</h3>
+<p><strong>HTTP Method:</strong> <code>GET</code></p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 17%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Parameter</strong></th>
+<th><strong>Necessity</strong></th>
+<th><strong>Type</strong></th>
+
+<th><strong>Description</strong></th>
+<th><strong>Example values</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td><strong>Required</strong></td>
+<td>String</td>
+
+<td>The Spotify ID of the artist.</td>
+<td><code>4k1ELeJKT1ISyDv8JivPpB</code></td>
+</tr>
+<tr class="even">
+<td><code>include_groups</code></td>
+<td>Optional</td>
+<td>String</td>
+<td>A comma-separated list of the filters. Valid values:
+<code>album</code>, <code>single</code>, <code>appears_on</code>,
+<code>compilation</code></td>
+<td><code>album, compilation</code></td>
+</tr>
+<tr class="odd">
+<td><code>market</code></td>
+<td>Optional</td>
+<td>String</td>
+
+<td>Country code. If specified, only the content available in that
+country is returned.</td>
+<td><code>FI</code></td>
+</tr>
+<tr class="even">
+<td><code>limit</code></td>
+<td>Optional</td>
+<td>Integer</td>
+
+<td>The maximum number of items returned. Any number can be specified
+between <em>0</em> and <em>50</em>. The default value is
+<em>20</em>.</td>
+<td><code>22</code></td>
+</tr>
+<tr class="odd">
+<td><code>offset</code></td>
+<td>Optional</td>
+<td>Integer</td>
+
+<td>The index of the first item to return. The default value is
+<em>0</em> which means the first item.</td>
+<td><code>3</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="response-success-2" style="text-align: left">Response – Success</h3>
+<p>When the response has been successfully completed, a
+<code>200 OK</code> response is returned along with the information
+listed in the following table.</p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 26%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Parameter</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Additional data included</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>href</code></td>
+<td>String</td>
+<td>A link to the endpoint that provides full details on the
+artist.</td>
+<td>None.</td>
+</tr>
+<tr class="even">
+<td><code>limit</code></td>
+<td>Integer</td>
+<td>The maximum number of items in the response.</td>
+<td>None.</td>
+</tr>
+<tr class="odd">
+<td><code>next</code></td>
+<td>String</td>
+<td>The URL to the next page of results, if applicable.</td>
+<td>None.</td>
+</tr>
+<tr class="even">
+<td><code>offset</code></td>
+<td>Integer</td>
+<td>The offset of the items returned.</td>
+<td>None.</td>
+</tr>
+<tr class="odd">
+<td><code>previous</code></td>
+<td>String</td>
+<td>The URL to the previous page of results, if applicable.</td>
+<td>None.</td>
+</tr>
+<tr class="even">
+<td><code>total</code></td>
+<td>Integer</td>
+<td>The total number of items available to return.</td>
+<td>None.</td>
+</tr>
+<tr class="odd">
+<td><code>items</code></td>
+<td>Array of SimplifiedAlbumObject</td>
+<td>Additional data on the albums in the response.</td>
+<td><code>album_type</code>: The type of the album, such as
+<code>album</code>, <code>single</code>, or <code>compilation</code>
+</br></br><code>total_tracks</code>: The number of tracks on the album.
+</br></br><code>available_markets</code>: The markets in which at least one
+trak from the album is available. </br></br><code>external_urls</code>:
+External URL for the album. </br></br><code>href</code>: A link to the
+endpoint that provides full details on the album. </br></br><code>id</code>:
+The Spotify ID of the album. </br></br><code>image</code>: The cover art of
+the album. </br></br><code>name</code>: The name of the album.
+</br></br><code>release_date</code>: The date the album was released.
+</br></br><code>release_date_precision</code>: The accuracy of the release
+date, such as <code>year</code>, <code>month</code>, or
+<code>day</code>. </br></br><code>restrictions</code>: Included only if
+content restrictions apply. </br></br><code>type</code>: The object type;
+always <code>album</code> for this response type. </br></br><code>uri</code>:
+The Spotify URI of the artist.</br></br><code>artists</code>: The artists who
+recorded the album.</br></br><code>album_group</code>: Additional information
+on the album, such as <code>album</code>, <code>single</code>,
+<code>appears_on</code>, or <code>compilation</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="response-error-2" style="text-align: left">Response – Error</h3>
+<p>When the response cannot be successfully completed, one of the
+following error messages is returned.</p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Response</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>401 Unauthorized</code></td>
+<td>Invalid or expired token.</td>
+<td>Re-authenticate.</td>
+</tr>
+<tr class="even">
+<td><code>403 Forbidden</code></td>
+<td>Request refused by the server.</td>
+<td>Do not repeat the request.</td>
+</tr>
+<tr class="odd">
+<td><code>429 Too Many Requests</code></td>
+<td>Too many requests from the user’s IP.</td>
+<td>Repeat the request later.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!--Get top tracks-->
+
+<h2 id="get-artists-top-tracks" style="background-color: #15e003">Get Artist’s Top Tracks</h2>
+<p>Get the catalog information of an artist’s top tracks by country.</p>
+<p><strong>Endpoint:</strong> <code>/artists/{id}/top-tracks</code></p>
+<h3 id="request-3" style="text-align: left">Request</h3>
+<p><strong>HTTP Method:</strong> <code>GET</code></p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 17%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Parameter</strong></th>
+<th><strong>Necessity</strong></th>
+<th><strong>Type</strong></th>
+
+<th><strong>Description</strong></th>
+<th><strong>Example values</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>Required</td>
+<td>String</td>
+
+<td>The Spotify ID of the artist.</td>
+<td><code>4k1ELeJKT1ISyDv8JivPpB</code></td>
+</tr>
+<tr class="even">
+<td><code>market</code></td>
+<td>Optional</td>
+<td>String</td>
+
+<td>Country code. If specified, only the content available in that
+country is returned.</td>
+<td><code>FI</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="response-success-3" style="text-align: left">Response – Success</h3>
+<p>When the response has been successfully completed, a
+<code>200 OK</code> response is returned along with the information
+listed in the following table.</p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 26%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Parameter</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Additional data included</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>tracks</code></td>
+<td>Array of TrackObjects</td>
+<td>A list of tracks.</td>
+<td><code>album</code>: The album that contains the
+track.</br></br><code>artists</code>: The artists who perform the
+track.</br></br><code>available_markets</code>: The list of countries where
+the track is available.</br></br><code>disc_number</code>: The number of
+discs of the album that contains the
+track.</br></br><code>duration_ms</code>: The length of the track in
+milliseconds.</br></br><code>explicit</code>: Whether the track is
+explicit.</br></br><code>external_ids</code>: External URL of the track.
+</br></br><code>external_urls</code>: External URL of the track.
+</br></br><code>href</code>: A link to the endpoint that provides full
+details on the track. </br></br><code>id</code>: The Spotify ID of the
+track.</br></br><code>is_playable</code>: It is present if the track is
+available in the given market. </br></br><code>linked_from</code>:
+Information about the originally requested track in case it is not
+playable in the given market and is replaced with another track.
+</br></br><code>restrictions</code>: Included only if content restrictions
+apply. </br></br><code>name</code>: The name of the track.
+</br></br><code>popularity</code> The popularity of the track on a scale
+between <em>0</em> (the least popular) and <em>100</em> (the most
+popular). </br></br><code>preview_url</code>: A link to a 30-second preview
+of the track if available. </br></br><code>track_number</code>: The ordinal
+number of the track on the album. </br></br><code>type</code>: The object
+type; always <code>track</code> for this response type.
+</br></br><code>uri</code>: The Spotify URI of the
+track.</br></br><code>is_local</code>: External URL of the track.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="response-error-3" style="text-align: left">Response – Error</h3>
+<p>When the response cannot be successfully completed, one of the
+following error messages is returned.</p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Response</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>401 Unauthorized</code></td>
+<td>Invalid or expired token.</td>
+<td>Re-authenticate.</td>
+</tr>
+<tr class="even">
+<td><code>403 Forbidden</code></td>
+<td>Request refused by the server.</td>
+<td>Do not repeat the request.</td>
+</tr>
+<tr class="odd">
+<td><code>429 Too Many Requests</code></td>
+<td>Too many requests from the user’s IP.</td>
+<td>Repeat the request later.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!--Get related artists-->
+
+
+
+<h2 id="get-artists-related-artists" style="background-color: #15e003">Get Artist’s Related Artists</h2>
+<p>Retrieve a list of artists that are similar to a specific artist
+based on Spotify users’ listening history.</p>
+<p><strong>Endpoint:</strong>
+<code>/artists/{id}/related-artists</code></p>
+<h3 id="request-4" style="text-align: left">Request</h3>
+<p><strong>HTTP Method:</strong> <code>GET</code></p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 17%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Parameter</strong></th>
+<th><strong>Necessity</strong></th>
+<th><strong>Type</strong></th>
+
+<th><strong>Description</strong></th>
+<th><strong>Example values</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>Required</td>
+<td>String</td>
+
+<td>The Spotify ID of the artist.</td>
+<td><code>4k1ELeJKT1ISyDv8JivPpB</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="response-success-4" style="text-align: left">Response – Success</h3>
+<p>When the response has been successfully completed, a
+<code>200 OK</code> response is returned along with the information
+listed in the following table.</p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 26%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Parameter</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Additional data included</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>artists</code></td>
+<td>Array of ArtistObjects</td>
+<td>A list of the related artists.</td>
+<td><code>external_urls</code>: External URL of the artist.
+</br></br><code>followers</code>: Information about the artist’s followers.
+</br></br><code>genres</code>: The list of genres associated with the artist.
+For example: <code>["Punk", "Hardcore"]</code> </br></br><code>href</code>: A
+link to the endpoint that provides full details on the artist.
+</br></br><code>id</code>: The Spotify ID of the
+artist.</br></br><code>images</code>: Images of the artist.
+</br></br><code>name</code>: The name of the artist.
+</br></br><code>popularity</code>: The popularity of the artist on a scale
+between <em>0</em> (the least popular) and <em>100</em> (the most
+popular). </br></br><code>type</code>: The object type; always
+<code>artist</code> for this response type.</br></br><code>uri</code>: The
+Spotify URI of the artist.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="response-error-4" style="text-align: left">Response – Error</h3>
+<p>When the response cannot be successfully completed, one of the
+following error messages is returned.</p>
+
+<div class="table-wrapper">
+<table class="green-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Response</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>401 Unauthorized</code></td>
+<td>Invalid or expired token.</td>
+<td>Re-authenticate.</td>
+</tr>
+<tr class="even">
+<td><code>403 Forbidden</code></td>
+<td>Request refused by the server.</td>
+<td>Do not repeat the request.</td>
+</tr>
+<tr class="odd">
+<td><code>429 Too Many Requests</code></td>
+<td>Too many requests from the user’s IP.</td>
+<td>Repeat the request later.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</body>
+</html>
