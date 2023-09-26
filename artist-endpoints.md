@@ -49,7 +49,7 @@ When the response has been successfully completed, a `200 OK` response is return
 
 ### Response – Error
 
-When the response cannot be successfully completed, one of the following  error messages is returned.
+When the response cannot be successfully completed, one of the following error codes is returned.
 
 | **Response**   | **Description**   | **Solution**  | 
 |--------------|-----------------|-----------------|
@@ -85,7 +85,7 @@ When the response has been successfully completed, a `200 OK` response is return
 
 ### Response – Error
 
-When the response cannot be successfully completed, one of the following  error messages is returned.
+When the response cannot be successfully completed, one of the following error codes is returned.
 
 | **Response**   | **Description**   | **Solution**  | 
 |--------------|-----------------|-----------------|
@@ -131,7 +131,7 @@ When the response has been successfully completed, a `200 OK` response is return
 
 ### Response – Error
 
-When the response cannot be successfully completed, one of the following  error messages is returned.
+When the response cannot be successfully completed, one of the following error codes is returned.
 
 | **Response**   | **Description**   | **Solution**  | 
 |--------------|-----------------|-----------------|
@@ -168,7 +168,7 @@ When the response has been successfully completed, a `200 OK` response is return
 
 ### Response – Error
 
-When the response cannot be successfully completed, one of the following  error messages is returned.
+When the response cannot be successfully completed, one of the following error codes is returned.
 
 | **Response**   | **Description**   | **Solution**  | 
 |--------------|-----------------|-----------------|
@@ -204,7 +204,7 @@ When the response has been successfully completed, a `200 OK` response is return
 
 ### Response – Error
 
-When the response cannot be successfully completed, one of the following  error messages is returned.
+When the response cannot be successfully completed, one of the following error codes is returned.
 
 | **Response**   | **Description**   | **Solution**  | 
 |--------------|-----------------|-----------------|
