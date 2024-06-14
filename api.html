@@ -1,0 +1,918 @@
+<!DOCTYPE HTML>
+<!--
+	Directive by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+	<head>
+		<title>Portfolio | Éva Kószó</title>
+		<meta charset="utf-8" />
+		<meta id="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Header -->
+		<div id="header">
+			<a href="https://koszoeva.github.io">
+			<img src="images/logo_ke.png" alt="" width="320" />
+			<p style="font-family: 'Playfair Display';">Technical Writer & Illustrator</p>
+			<p> </p>	
+			<h2 style="font-family: 'Poppins'; font-weight: 600;">PORTFOLIO</h2>
+		</a>
+		</div>
+
+			<!--TW comment-->
+
+				<div class="box container">
+					<header style="padding-bottom: 0% ;">
+						<h2>Mock API document</h2>
+            <div>
+						<p style="text-transform: none; text-align: left">This is the documentation of a mock snooker statistics API.</p>
+            <p style="text-transform: none; text-align: left"><i>
+            The content is intended to showcase my writing style and skills. 
+            Please note that the documented API is fictional and may not be 
+            logically constructed, as my expertise lies in documenting APIs 
+            rather than creating them.</i></p>
+            </div>
+					</header>
+				</div>
+
+
+				<!--Intro-->
+
+<div class="container" style="background-color: #ffffff; border: 4px solid #0000BC; overflow: auto;">
+
+   <style type="text/css">
+        body {
+          font-family: 'Poppins', sans-serif;
+          font-size: 15px;
+          color: #444;
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+        
+        h1	{
+          font-size: 25px;
+        }
+        h2	{
+          font-size: 20px;
+        }
+        h3	{
+          font-size: 16px;
+          font-weight: bold;
+          text-align: left;
+        }
+        hr	{
+          height: 1px;
+          border: 0;
+          color: #ddd;
+          background-color: #ddd;
+        }
+        
+        .app-desc {
+          clear: both;
+          margin-left: 20px;
+        }
+        .param-name {
+          width: 100%;
+        }
+        .license-info {
+          margin-left: 20px;
+        }
+        
+        .license-url {
+          margin-left: 20px;
+        }
+        
+        .model {
+          margin: 0 0 0px 20px;
+        }
+        
+        .method {
+          background-color: transparent !important;
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+        
+        .method-notes	{
+          margin: 10px 0 20px 0;
+          font-size: 90%;
+          color: #555;
+        }
+        
+        pre {
+          padding: 10px;
+          margin-bottom: 2px;
+        }
+        
+        .http-method {
+        text-transform: uppercase;
+        }
+        
+        pre.get {
+          background-color: #0000BC;
+        }
+        
+        pre.post {
+          background-color: #037a31;
+        }
+        
+        pre.put {
+          background-color: #fc9b13;
+        }
+        
+        pre.delete {
+          background-color: #a70208;
+        }
+        
+        .huge	{
+          color: #fff;
+        }
+        
+        pre.example {
+          background-color: #f3f3f3;
+          padding: 10px; 
+          border: 1px solid #ddd;
+        }
+        
+        code {
+          white-space: pre;
+        }
+        
+        .nickname {
+          font-weight: bold;
+        }
+        
+        .method-path {
+          font-family: 'Share Tech Mono', monospace;
+          font-size: 1.5em;
+          background-color: #0000BC;
+        }
+        
+        .up {
+          float:right;
+        }
+        
+        .parameter {
+          width: 500px;
+        }
+        
+        .param {
+          width: 500px;
+          padding: 10px 0 0 20px;
+          font-weight: bold;
+          font-family: 'Share Tech Mono', monospace;
+        }
+        
+        .param-desc {
+          width: 700px;
+          padding: 0 0 0 20px;
+          color: #777;
+        }
+        
+        .param-type {
+          font-style: italic;
+        }
+        
+        .param-enum-header {
+        width: 700px;
+        padding: 0 0 0 60px;
+        color: #777;
+        font-weight: bold;
+        }
+        
+        .param-enum {
+        width: 700px;
+        padding: 0 0 0 80px;
+        color: #777;
+        font-style: italic;
+        }
+        
+        .field-label {
+          padding: 0;
+          margin: 0;
+          clear: both;
+        }
+        
+        .field-items	{
+          padding: 0 0 15px 0;
+          margin-bottom: 15px;
+        }
+        
+        .return-type {
+          clear: both;
+          padding-bottom: 10px;
+        }
+        
+        .param-header {
+          font-weight: bold;
+        }
+        
+        .method-tags {
+          text-align: right;
+        }
+        
+        .method-tag {
+          background: none repeat scroll 0% 0% #24A600;
+          border-radius: 3px;
+          padding: 2px 10px;
+          margin: 2px;
+          color: #FFF;
+          display: inline-block;
+          text-decoration: none;
+        }
+      </style>
+
+
+  <h1>Snooker Statistics API</h1>
+  <p style="padding: 20px">API for managing snooker players, tournaments, and match statistics.</p>
+
+  <h2><a id="__Methods">Methods</a></h2>
+  <p style="color:#0000BC; padding: 0 0 0 20px;">[ Jump to <a href="#__Models" style="color:#0000BC;">Models</a> ]</p>
+
+
+
+    <!--TOC -->
+
+  <h3 style="text-align: left; padding: 0 0 0 20px;">Table of Contents </h3>
+  <h4 style="text-align: left; padding: 0 0 0 20px;"><a href="#Players">Players</a></h4>
+  <ul>
+  <li><a href="#playersGet"><code><span class="http-method">get</span> /players</code></a></li>
+  <li><a href="#playersPlayerIdDelete"><code><span class="http-method">delete</span> /players/{playerId}</code></a></li>
+  <li><a href="#playersPlayerIdGet"><code><span class="http-method">get</span> /players/{playerId}</code></a></li>
+  <li><a href="#playersPlayerIdPut"><code><span class="http-method">put</span> /players/{playerId}</code></a></li>
+  <li><a href="#playersPost"><code><span class="http-method">post</span> /players</code></a></li>
+  </ul>
+  <h4 style="text-align: left; padding: 0 0 0 20px;"><a href="#Matches">Matches</a></h4>
+  <ul>
+  <li><a href="#matchesGet"><code><span class="http-method">get</span> /matches</code></a></li>
+  <li><a href="#matchesMatchIdDelete"><code><span class="http-method">delete</span> /matches/{matchId}</code></a></li>
+  <li><a href="#matchesMatchIdGet"><code><span class="http-method">get</span> /matches/{matchId}</code></a></li>
+  <li><a href="#matchesMatchIdPut"><code><span class="http-method">put</span> /matches/{matchId}</code></a></li>
+  <li><a href="#matchesPost"><code><span class="http-method">post</span> /matches</code></a></li>
+  </ul>
+  <h4 style="text-align: left; padding: 0 0 0 20px;"><a href="#Tournaments">Tournaments</a></h4>
+  <ul>
+  <li><a href="#tournamentsGet"><code><span class="http-method">get</span> /tournaments</code></a></li>
+  <li><a href="#tournamentsPost"><code><span class="http-method">post</span> /tournaments</code></a></li>
+  <li><a href="#tournamentsTournamentIdDelete"><code><span class="http-method">delete</span> /tournaments/{tournamentId}</code></a></li>
+  <li><a href="#tournamentsTournamentIdGet"><code><span class="http-method">get</span> /tournaments/{tournamentId}</code></a></li>
+  <li><a href="#tournamentsTournamentIdPut"><code><span class="http-method">put</span> /tournaments/{tournamentId}</code></a></li>
+  </ul>
+
+
+  <!-- PLAYERS -->
+
+  <h1><a id="Players">Players</a></h1>
+  
+  <div class="method"><a id="playersGet"></a>
+    <div class="method-path">
+      <pre class="get"><code class="huge" style="background-color: transparent;"><span class="http-method">get</span> /players</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Returns the list of players in the database.</div>
+
+  <h3 class="field-label">Request</h3>
+  <div class="field-items">
+    <ul>
+      <li style="padding-bottom: 15px;"><div><code><b>playerId</b></code> (optional)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
+      <li style="padding-bottom: 15px;"><div><code><b>name</b></code> (optional)<br>The name of the player.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
+      <li><div><code><b>country</b></code> (optional)<br>The home country of the player.<br><b>Type: </b>String<br><b>Example: </b><code>Scotland</code></div></li>
+    </ul>
+</div>
+
+<h3 class="field-label" style="padding-bottom: 20px;">Response</h3>
+<p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
+
+    <p style="margin-left: 20px;"><b>Example data</b></p>
+    <pre class="example" style="margin-left: 20px;"><code>[ {
+  "country" : "Scotland",
+  "name" : "Adrian Honker",
+  "playerId" : "12345",
+  "nicknames" : [ "The Feather Shot", "The Snookering Swan" ],
+  "bestRanking" : 8,
+  "currentRanking" : 10
+}, {
+  "country" : "Scotland",
+  "name" : "Bob Potts",
+  "playerId" : "12321",
+  "nicknames" : [ "The Potmeister", "Magic Bob" ],
+  "bestRanking" : 39,
+  "currentRanking" : 41
+} ]</code></pre>
+<p></p>
+<p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px;">404 - Not found</p>
+
+
+  </div> <!-- method -->
+  
+  <hr/>
+  
+  <div class="method"><a id="playersPlayerIdDelete"></a>
+    <div class="method-path">
+       <pre class="delete"><code class="huge" style="background-color: transparent;"><span class="http-method">delete</span> /players/{playerId}</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Deletes an existing player based on their ID.</div>
+
+    <h3 class="field-label">Request</h3>
+    <div style="padding: 0 0 20px 0;">
+      <ul>
+        <li><div><code><b>playerId</b></code> (required)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
+      </ul>
+    </div>
+
+    <h3 class="field-label">Response</h3>
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">204 - Deleted</p>
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
+
+  </div> <!-- method -->
+  
+  <hr/>
+  
+
+  <div class="method"><a id="playersPlayerIdGet"></a>
+    <div class="method-path">
+    <pre class="get"><code class="huge" style="background-color: transparent;"><span class="http-method">get</span> /players/{playerId}</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Returns an existing player based on their ID.</div>
+
+    <h3 class="field-label">Request</h3>
+    <div style="padding: 0 0 20px 0;">
+      <ul>
+        <li><div><code><b>playerId</b></code> (required)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
+      </ul>
+    </div>
+
+    <h3 class="field-label">Response</h3>
+    
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
+
+    <p style="margin-left: 20px;"><b>Example data</b></p>
+    <pre class="example" style="margin-left: 20px;"><code>{
+  "country" : "Scotland",
+  "bestRanking" : 8,
+  "currentRanking" : 10,
+  "name" : "Adrian Honker",
+  "playerId" : "12345",
+  "nicknames" : [ "The Feather Shot", "The Snookering Swan" ]
+}</code></pre>
+<p></p>
+
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
+    
+  </div> <!-- method -->
+  
+  
+  <hr/>
+  
+  
+    <div class="method"><a id="playersPlayerIdPut"></a>
+    <div class="method-path">
+    <pre class="put"><code class="huge" style="background-color: transparent;"><span class="http-method">put</span> /players/{playerId}</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Updates an existing player based on their ID.</div>
+
+    <h3 class="field-label">Request</h3>
+    <div style="padding: 0 0 20px 0;">
+      <ul>
+        <li style="padding-bottom: 15px;"><div><code><b>playerId</b></code> (required)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>name</b></code> (optional)<br>The name of the player.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>nicknames</b></code> (optional)<br>The nicknames of the player.<br><b>Type: </b>array[String]<br><b>Example: </b><code>[&quot;The Feather Shot&quot;,&quot;The Snookering Swan&quot;]</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>currentRanking</b></code> (optional)<br>The current ranking of the player.<br><b>Type: </b>Integer<br><b>Example: </b><code>10</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>bestRanking</b></code> (optional)<br>The best ever ranking of the player.<br><b>Type: </b>Integer<br><b>Example: </b><code>8</code></div></li>
+        <li><div><code><b>country</b></code> (optional)<br>The home country of the player.<br><b>Type: </b>String<br><b>Example: </b><code>Scotland</code></div></li>
+      </ul>
+  </div>
+
+    <h3 class="field-label">Response</h3>
+
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
+
+    <p style="margin-left: 20px;"><b>Example data</b></p>
+    <pre class="example" style="margin-left: 20px;"><code>{
+  "playerId" : "12345",
+  "name" : "Adrian Honker",
+  "nicknames" : [ "The Feather Shot", "The Snookering Swan" ],
+  "country" : "Scotland",
+  "bestRanking" : 6,
+  "currentRanking" : 22
+}</code></pre>
+<p></p>
+
+
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
+
+  </div> <!-- method -->
+  
+  <hr/>
+  
+  <div class="method"><a id="playersPost"></a>
+    <div class="method-path">
+    <pre class="post"><code class="huge" style="background-color: transparent;"><span class="http-method">post</span> /players</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Creates a new player.</div>
+
+
+    <h3 class="field-label">Request</h3>
+    <div style="padding: 0 0 20px 0;">
+      <ul>
+        <li style="padding-bottom: 15px;"><div><code><b>playerId</b></code> (required)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>name</b></code> (optional)<br>The name of the player.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>nicknames</b></code> (optional)<br>The nicknames of the player.<br><b>Type: </b>array[String]<br><b>Example: </b><code>[&quot;The Feather Shot&quot;,&quot;The Snookering Swan&quot;]</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>currentRanking</b></code> (optional)<br>The current ranking of the player.<br><b>Type: </b>Integer<br><b>Example: </b><code>10</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>bestRanking</b></code> (optional)<br>The best ever ranking of the player.<br><b>Type: </b>Integer<br><b>Example: </b><code>8</code></div></li>
+        <li><div><code><b>country</b></code> (optional)<br>The home country of the player.<br><b>Type: </b>String<br><b>Example: </b><code>Scotland</code></div></li>
+      </ul>
+  </div>
+
+
+
+    <h3 class="field-label">Response</h3>
+
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">201 - Created</p>
+
+    <p style="margin-left: 20px;"><b>Example data</b></p>
+    <pre class="example" style="margin-left: 20px;"><code>{
+  "playerId" : "12321",
+  "name" : "Bob Potts",
+  "nicknames" : [ "The Potmeister", "Magic Bob" ],
+  "country" : "Scotland",
+  "bestRanking" : 39,
+  "currentRanking" : 41
+}</code></pre>
+<p></p>
+
+  </div> <!-- method -->
+  
+  <hr/>
+
+    <!--MATCHES -->
+
+  <h1><a id="Matches">Matches</a></h1>
+
+  <div class="method"><a id="matchesGet"></a>
+    <div class="method-path">
+    <pre class="get"><code class="huge" style="background-color: transparent;"><span class="http-method">get</span> /matches</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Returns a list of matches.</div>
+
+    <h3 class="field-label">Request</h3>
+    <div style="padding: 0 0 20px 0;">
+      <ul>
+        <li style="padding-bottom: 15px;"><div><code><b>playerId</b></code> (optional)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
+        <li><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
+      </ul>
+    </div>
+
+    <h3 class="field-label">Response</h3>
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
+
+    <p style="margin-left: 20px;"><b>Example data</b></p>
+    <pre class="example" style="margin-left: 20px;"><code>[ {
+  "tournamentId" : "67890",
+  "date" : "2023-04-20T00:00:00.000+00:00",
+  "matchId" : "112233",
+  "player1Id" : "12345",
+  "player2Id" : "54321",
+  "score" : "5-3",
+  "refereeCountry" : "Wales",
+  "referee" : "Max Fouls"
+}, {
+  "tournamentId" : "67890",
+  "date" : "2023-04-21T00:00:00.000+00:00",
+  "matchId" : "223344",
+  "player1Id" : "98765",
+  "player2Id" : "56789",
+  "score" : "4-5",
+  "refereeCountry" : "England",
+  "referee" : "Vincent Respots"
+} ]</code></pre>
+<p></p>
+
+<p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
+
+    
+  </div> <!-- method -->
+  
+  <hr/>
+  
+    <div class="method"><a id="matchesMatchIdDelete"></a>
+    <div class="method-path">
+    <pre class="delete"><code class="huge" style="background-color: transparent;"><span class="http-method">delete</span> /matches/{matchId}</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Deletes an existing match by its ID.</div>
+
+    <h3 class="field-label">Request</h3>
+    <div class="field-items">
+        <ul>
+          <li><div><code><b>matchId</b></code> (required)<br>The ID of the match.<br><b>Type: </b>String<br><b>Example: </b><code>112233</code></div></li>
+        </ul>
+      </div>
+
+    <h3 class="field-label">Response</h3>
+
+        <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">204 - Deleted</p>
+        <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
+
+  </div> <!-- method -->
+
+  <hr/>
+  
+    <div class="method"><a id="matchesMatchIdGet"></a>
+
+    <div class="method-path">
+    <pre class="get"><code class="huge" style="background-color: transparent;"><span class="http-method">get</span> /matches/{matchId}</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Returns a match by its ID.</div>
+
+    <h3 class="field-label">Request</h3>
+    <div class="field-items">
+      <div class="field-items">
+        <ul>
+          <li><div><code><b>matchId</b></code> (required)<br>The ID of the match.<br><b>Type: </b>String<br><b>Example: </b><code>112233</code></div></li>
+        </ul>
+      </div>
+
+          <h3 class="field-label">Response</h3>
+   
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
+
+    <p style="margin-left: 20px;"><b>Example data</b></p>
+    <pre class="example" style="margin-left: 20px;"><code>{
+  "date" : "2023-04-20T00:00:00.000+00:00",
+  "matchId" : "112233",
+  "tournamentId" : "67890",
+  "player1Id" : "12345",
+  "player2Id" : "54321",
+  "score" : "5-3",
+  "referee" : "Max Fouls"
+  "refereeCountry" : "Wales",
+}</code></pre>
+<p></p>
+
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
+
+        <a href="#"></a>
+  </div> <!-- method -->
+  
+  <hr/>
+  
+    <div class="method"><a id="matchesMatchIdPut"></a>
+    <div class="method-path">
+    <pre class="put"><code class="huge" style="background-color: transparent;"><span class="http-method">put</span> /matches/{matchId}</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Updates a match by its ID.</div>
+
+    <h3 class="field-label">Request</h3>
+    <div class="field-items">
+      <div class="field-items">
+        <ul>
+          <li><div><code><b>matchId</b></code> (required)<br>The ID of the match.<br><b>Type: </b>String<br><b>Example: </b><code>112233</code></div></li>
+        </ul>
+      </div>
+
+    <h3 class="field-label">Response</h3>
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
+
+    <p style="margin-left: 20px;"><b>Example data</b></p>
+<pre class="example" style="margin-left: 20px;"><code>{
+  "date" : "2023-04-20T00:00:00.000+00:00",
+  "matchId" : "112233",
+  "tournamentId" : "67890",
+  "player1Id" : "12345",
+  "player2Id" : "54321",
+  "score" : "5-4",
+  "referee" : "Helmut Balls"
+  "refereeCountry" : "Northern Ireland",
+}</code></pre>
+<p></p>
+
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
+
+  </div> <!-- method -->
+  
+  <hr/>
+  
+  <div class="method"><a id="matchesPost"></a>
+    <div class="method-path">
+    <pre class="post"><code class="huge" style="background-color: transparent;"><span class="http-method">post</span> /matches</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Creates a new match.</div>
+
+
+    <h3 class="field-label">Request</h3>
+    <div class="field-items" style="padding: 0 0 0 20px;">
+      <ul>
+          <li style="padding-bottom: 15px;"><div><code><b>matchId</b></code> (required)<br>The ID of the match.<br><b>Type: </b>String<br><b>Example: </b><code>112233</code></div></li>
+          <li style="padding-bottom: 15px;"><div><code><b>tournamentId</b></code> (required)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
+          <li style="padding-bottom: 15px;"><div><code><b>player1Id</b></code> (required)<br>The ID of player 1.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
+          <li style="padding-bottom: 15px;"><div><code><b>player2Id</b></code> (required)<br>The ID of player 2.<br><b>Type: </b>String<br><b>Example: </b><code>54321</code></div></li>
+          <li style="padding-bottom: 15px;"><div><code><b>score</b></code> (required)<br>The result of the match.<br><b>Type: </b>String<br><b>Example: </b><code>5-3</code></div></li>
+          <li style="padding-bottom: 15px;"><div><code><b>referee</b></code> (optional)<br>The name of the match referee.<br><b>Type: </b>String<br><b>Example: </b><code>Max Fouls</code></div></li>
+          <li style="padding-bottom: 15px;"><div><code><b>refereeCountry</b></code> (optional)<br>The home country of the match referee.<br><b>Type: </b>String<br><b>Example: </b><code>Wales</code></div></li>
+          <li><div><code><b>date</b></code> (required)<br>The date of the match.<br><b>Type: </b>Date<br><b>Example: </b><code>Thu Apr 20 00:00:00 GMT 2023</code></div></li>
+        </ul>
+    </div>
+
+    <h3 class="field-label">Response</h3>
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">201 - Created</p>
+
+    <p style="margin-left: 20px;"><b>Example data</b></p>
+    <pre class="example" style="margin-left: 20px;"><code>{
+  "date" : "2023-04-20T00:00:00.000+00:00",
+  "player1Id" : "12345",
+  "score" : "5-3",
+  "refereeCountry" : "Wales",
+  "player2Id" : "54321",
+  "tournamentId" : "67890",
+  "matchId" : "112233",
+  "referee" : "Max Fouls"
+}</code></pre>
+<p></p>
+
+
+
+  </div> <!-- method -->
+  
+  <hr/>
+
+
+<!-- TOURNAMENTS -->
+
+  <h1><a id="Tournaments">Tournaments</a></h1>
+  <div class="method"><a id="tournamentsGet"></a>
+    <div class="method-path">
+    <pre class="get"><code class="huge" style="background-color: transparent;"><span class="http-method">get</span> /tournaments</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Returns a list of tournaments.</div>
+
+    <h3 class="field-label">Request</h3>
+    <div class="field-items">
+      <ul>
+        <li style="padding-bottom: 15px;"><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
+        <li><div><code><b>name</b></code> (optional)<br>The name os the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>World Championship</code></div></li>
+      </ul>
+  </div>
+
+  <h3 class="field-label">Response</h3>
+
+  <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
+
+    <p style="margin-left: 20px;"><b>Example data</b></p>
+    <pre class="example" style="margin-left: 20px;"><code>[ {
+  "name" : "World Championship",
+  "tournamentId" : "67890",
+  "location" : "Sheffield, UK",
+  "isInvitational" : false,
+  "isRanking" : true,
+  "startDate" : "2023-04-15T00:00:00.000+00:00"
+  "endDate" : "2023-04-30T00:00:00.000+00:00",
+}, {
+  "name" : "World Championship",
+  "tournamentId" : "56789",
+  "location" : "Sheffield, UK",
+  "isInvitational" : false,
+  "isRanking" : true,
+  "startDate" : "2022-04-15T00:00:00.000+00:00"
+  "endDate" : "2022-04-30T00:00:00.000+00:00",
+} ]</code></pre>
+<p></p>
+
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
+
+
+  </div> <!-- method -->
+  
+  <hr/>
+  
+  <div class="method"><a id="tournamentsPost"></a>
+    <div class="method-path">
+    <pre class="post"><code class="huge" style="background-color: transparent;"><span class="http-method">post</span> /tournaments</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Creates a new tournament.</div>
+
+
+    <h3 class="field-label">Request</h3>
+    <div class="field-items">
+      <ul>
+        <li style="padding-bottom: 15px;"><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>name</b></code> (optional)<br>The name os the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>World Championship</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>location</b></code> (optional)<br>The location of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>Sheffield, UK</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>isRanking</b></code> (optional)<br>True if the tournament is a ranking event; false otherwise.<br><b>Type: </b>Boolean<br><b>Example: </b><code>10</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>isInvitational</b></code> (optional)<br>True if the tournament is an invitational event; false otherwise.<br><b>Type: </b>Boolean<br><b>Example: </b><code>Sat Apr 15 00:00:00 GMT 2023</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>startDate</b></code> (optional)<br>The start date of the tournament.<br><b>Type: </b>Date<br><b>Example: </b><code>Sun Apr 30 00:00:00 GMT 2023</code></div></li>
+      </ul>
+  </div>
+
+  <h3 class="field-label">Response</h3>
+  <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">201 - Created</p>
+
+    <p style="margin-left: 20px;"><b>Example data</b></p>
+    <pre class="example"  style="margin-left: 20px;"><code>{
+  "name" : "Masters",
+  "tournamentId" : "555666",
+  "location" : "London, UK",
+  "isInvitational" : true,
+  "isRanking" : false,
+  "startDate" : "2023-01-07T00:00:00.000+00:00"
+  "endDate" : "2022-01-14T00:00:00.000+00:00",
+}</code></pre>
+<p></p>
+
+
+
+  </div> <!-- method -->
+  
+  <hr/>
+  
+    <div class="method"><a id="tournamentsTournamentIdDelete"></a>
+    <div class="method-path">
+    <pre class="delete"><code class="huge" style="background-color: transparent;"><span class="http-method">delete</span> /tournaments/{tournamentId}</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Deletes a tournament by its ID.</div>
+
+    <h3 class="field-label">Request</h3>
+    <div class="field-items">
+      <ul>
+        <li><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
+      </ul>
+  </div>
+
+    <h3 class="field-label">Response</h3>
+
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">204 - Deleted</p>
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
+
+        <a href="#"></a>
+  </div> <!-- method -->
+
+  <hr/>
+
+    <div class="method"><a id="tournamentsTournamentIdGet"></a>
+    <div class="method-path">
+    <pre class="get"><code class="huge" style="background-color: transparent;"><span class="http-method">get</span> /tournaments/{tournamentId}</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Returns the details of a tournament by its ID.</div>
+
+    <h3 class="field-label">Request</h3>
+    <div class="field-items">
+      <div class="param">tournamentId (required)</div>
+
+
+    <h3 class="field-label">Request</h3>
+    <div class="field-items">
+      <ul>
+        <li><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
+      </ul>
+  </div>
+
+
+  <h3 class="field-label">Response</h3>
+
+  <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
+
+    <p style="margin-left: 20px;"><b>Example data</b></p>
+    <pre class="example"  style="margin-left: 20px;"><code>{
+  "isInvitational" : true,
+  "isRanking" : true,
+  "endDate" : "2023-04-30T00:00:00.000+00:00",
+  "name" : "World Championship",
+  "location" : "Sheffield, UK",
+  "tournamentId" : "67890",
+  "startDate" : "2023-04-15T00:00:00.000+00:00"
+}</code></pre>
+<p></p>
+
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
+
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+    <div class="method"><a id="tournamentsTournamentIdPut"></a></div>
+    <div class="method-path">
+    <pre class="put"><code class="huge" style="background-color: transparent;"><span class="http-method">put</span> /tournaments/{tournamentId}</code></pre></div>
+    <div class="method-notes" style="font-size: 17px;">Updates an existing tournament by its ID.</div>
+
+    <h3 class="field-label">Request</h3>
+    <div class="field-items">
+      <ul>
+        <li style="padding-bottom: 15px;"><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>name</b></code> (optional)<br>The name os the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>World Championship</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>location</b></code> (optional)<br>The location of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>Sheffield, UK</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>isRanking</b></code> (optional)<br>True if the tournament is a ranking event; false otherwise.<br><b>Type: </b>Boolean<br><b>Example: </b><code>10</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>isInvitational</b></code> (optional)<br>True if the tournament is an invitational event; false otherwise.<br><b>Type: </b>Boolean<br><b>Example: </b><code>Sat Apr 15 00:00:00 GMT 2023</code></div></li>
+        <li style="padding-bottom: 15px;"><div><code><b>startDate</b></code> (optional)<br>The start date of the tournament.<br><b>Type: </b>Date<br><b>Example: </b><code>Sun Apr 30 00:00:00 GMT 2023</code></div></li>
+      </ul>
+  </div>
+
+
+  <h3 class="field-label">Response</h3>
+
+  <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
+
+    <p style="margin-left: 20px;"><b>Example data</b></p>
+    <pre class="example" style="margin-left: 20px;"><code>{
+  "isInvitational" : true,
+  "isRanking" : true,
+  "endDate" : "2023-04-30T00:00:00.000+00:00",
+  "name" : "World Championship",
+  "location" : "Sheffield, UK",
+  "tournamentId" : "67890",
+  "startDate" : "2023-04-15T00:00:00.000+00:00"
+}</code></pre>
+<p></p>
+
+
+    <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
+
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a id="__Models">Models</a></h2>
+  <p style="color:#0000BC; padding: 0 0 0 20px;">[ Jump to <a href="#__Methods" style="color:#0000BC;">Methods</a> ]</p>
+
+  <h3 style="padding: 0 0 0 20px;">Table of Contents</h3>
+  <ol style="padding: 0 0 0 80px;">
+    <li><a href="#Match"><code>Match</code></a></li>
+    <li><a href="#Player"><code>Player</code></a></li>
+    <li><a href="#Tournament"><code>Tournament</code></a></li>
+  </ol>
+
+
+
+    <div class="model" style="padding: 0 0 0 0;"></div>
+    <h3 style="padding: 0 0 0 20px;"><a id="Match"><code>Match</code></a></h3>
+      <div class="field-items" style="padding: 0 0 0 20px;">
+        <ul>
+            <li style="padding-bottom: 15px;"><div><code><b>matchId</b></code> (optional)<br>The ID of the match.<br><b>Type: </b>String<br><b>Example: </b><code>112233</code></div></li>
+            <li style="padding-bottom: 15px;"><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
+            <li style="padding-bottom: 15px;"><div><code><b>player1Id</b></code> (optional)<br>The ID of player 1.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
+            <li style="padding-bottom: 15px;"><div><code><b>player2Id</b></code> (optional)<br>The ID of player 2.<br><b>Type: </b>String<br><b>Example: </b><code>54321</code></div></li>
+            <li style="padding-bottom: 15px;"><div><code><b>score</b></code> (optional)<br>The result of the match.<br><b>Type: </b>String<br><b>Example: </b><code>5-3</code></div></li>
+            <li style="padding-bottom: 15px;"><div><code><b>referee</b></code> (optional)<br>The name of the match referee.<br><b>Type: </b>String<br><b>Example: </b><code>Max Fouls</code></div></li>
+            <li style="padding-bottom: 15px;"><div><code><b>refereeCountry</b></code> (optional)<br>The home country of the match referee.<br><b>Type: </b>String<br><b>Example: </b><code>Wales</code></div></li>
+            <li style="padding-bottom: 15px;"><div><code><b>date</b></code> (optional)<br>The date of the match.<br><b>Type: </b>Date<br><b>Example: </b><code>Thu Apr 20 00:00:00 GMT 2023</code></div></li>
+          </ul>
+      </div>
+
+      <div class="model" style="padding: 0 0 0 0;">
+      <h3 style="padding: 0 0 0 0;"><a id="Player"><code>Player</code></a></h3>
+        <div class="field-items">
+          <ul>
+            <li style="padding-bottom: 15px;"><div><code><b>playerId</b></code> (optional)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
+            <li style="padding-bottom: 15px;"><div><code><b>name</b></code> (optional)<br>The name of the player.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
+            <li style="padding-bottom: 15px;"><div><code><b>nicknames</b></code> (optional)<br>The nicknames of the player.<br><b>Type: </b>array[String]<br><b>Example: </b><code>[&quot;The Feather Shot&quot;,&quot;The Snookering Swan&quot;]</code></div></li>
+            <li style="padding-bottom: 15px;"><div><code><b>currentRanking</b></code> (optional)<br>The current ranking of the player.<br><b>Type: </b>Integer<br><b>Example: </b><code>10</code></div></li>
+            <li style="padding-bottom: 15px;"><div><code><b>bestRanking</b></code> (optional)<br>The best ever ranking of the player.<br><b>Type: </b>Integer<br><b>Example: </b><code>8</code></div></li>
+            <li style="padding-bottom: 15px;"><div><code><b>country</b></code> (optional)<br>The home country of the player.<br><b>Type: </b>String<br><b>Example: </b><code>Scotland</code></div></li>
+          </ul>
+      </div>
+
+  <div class="model;" style="padding: 0 0 0 0;">
+    <h3 style="padding: 0 0 0 0;"><a id="Tournament"><code>Tournament</code></a></h3>
+    <div class="field-items">
+        <ul>
+          <li style="padding-bottom: 15px;"><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
+          <li style="padding-bottom: 15px;"><div><code><b>name</b></code> (optional)<br>The name os the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>World Championship</code></div></li>
+          <li style="padding-bottom: 15px;"><div><code><b>location</b></code> (optional)<br>The location of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>Sheffield, UK</code></div></li>
+          <li style="padding-bottom: 15px;"><div><code><b>isRanking</b></code> (optional)<br>True if the tournament is a ranking event; false otherwise.<br><b>Type: </b>Boolean<br><b>Example: </b><code>10</code></div></li>
+          <li style="padding-bottom: 15px;"><div><code><b>isInvitational</b></code> (optional)<br>True if the tournament is an invitational event; false otherwise.<br><b>Type: </b>Boolean<br><b>Example: </b><code>Sat Apr 15 00:00:00 GMT 2023</code></div></li>
+          <li style="padding-bottom: 15px;"><div><code><b>startDate</b></code> (optional)<br>The start date of the tournament.<br><b>Type: </b>Date<br><b>Example: </b><code>Sun Apr 30 00:00:00 GMT 2023</code></div></li>
+        </ul>
+    </div>
+
+  </div>
+
+  </div>
+  </div>
+</div>
+</div>
+</body>
+
+
+		<!-- Footer -->
+
+    <div id="footer">
+      <footer class="major container medium">
+          <h2 style="font-family: 'Playfair Display';">Get in touch</h2>
+          <p>See my resume if you haven't already.<br>It contains my contact information and much more!</p>
+          <ul class="actions special">
+              <li><a href="https://koszoeva.github.io/cv" class="button">Check out my CV</a></li>
+          </ul>
+      </footer>
+
+  
+        <h2 style="font-family: 'Playfair Display'; padding-top: 40px;">Social links & other cool stuff</h2>
+        <ul class="icons">
+        <li><a href="mailto:koszoeva@yahoo.com" class="icon fa-envelope"></a></li>
+        <li><a href="https://www.linkedin.com/in/eva-koszo/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        <li><a href="https://github.com/koszoeva" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="https://www.youtube.com/@alohaandanarchy/" class="icon brands fa-youtube"><span class="label">Dribbble</span></a></li>
+        </ul>
+        
+        <ul class="copyright">
+        <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+
+    </div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+</html>
