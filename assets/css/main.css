@@ -154,7 +154,7 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
-	h1, h2, h3, h4 {
+	h1, h2, h4 {
 		color: #2B2C34;
 		font-weight: 900;
 		letter-spacing: 0.125em;
@@ -164,6 +164,18 @@ input, select, textarea {
 		text-align: center;
 		font-family: "Poppins";
 	}
+
+	h3 {
+		color: #2B2C34;
+		font-weight: 600;
+		letter-spacing: 0.125em;
+		line-height: 1.75em;
+		margin-bottom: 1em;
+		text-transform: uppercase;
+		text-align: center;
+		font-family: "Poppins";
+	}
+
 
 	h5 {
 		color: #2B2C34;
@@ -3306,3 +3318,124 @@ table.green-bordered thead {
 				}
 
 	}
+
+/* ===========================
+   Portfolio grid override (cards)
+   - 1 col (mobile) / 2 cols (small) / 3 cols (wide)
+   - 4:3 thumbnails
+   - whole card is a link (image + text)
+   - subtle card lift on hover
+   - removes old image darken overlay (was for the eye icon)
+   =========================== */
+
+/* Grid wrapper */
+.box.alt.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+}
+
+/* 2 columns on small+ screens */
+@media screen and (min-width: 736px) {
+  .box.alt.container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 3 columns on wide screens */
+@media screen and (min-width: 980px) {
+  .box.alt.container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Card container */
+.box.alt.container .feature {
+  height: auto;
+  margin: 0;
+  background: #f5f6ff;
+  border: solid 1px rgba(224, 224, 224, 0.75);
+  border-radius: 14px;
+  overflow: hidden;
+  text-align: left;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+/* Remove the template's vertical-align helpers */
+.box.alt.container .feature:before,
+.box.alt.container .feature:after {
+  display: none !important;
+}
+
+/* Whole card is clickable */
+.box.alt.container .feature > a.work-link {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Subtle lift + shadow on hover */
+.box.alt.container .feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Image becomes the card top */
+.box.alt.container .feature .image {
+  float: none !important;
+  display: block;
+  width: 100% !important;
+
+  /* consistent thumbnail shape */
+  aspect-ratio: 4 / 3;
+  height: auto !important;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Remove the old darken overlay (was used behind the eye icon) */
+.box.alt.container .feature .image:after {
+  display: none !important;
+}
+
+/* Fill the thumbnail area nicely */
+.box.alt.container .feature .image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  transition: transform 180ms ease;
+}
+
+/* Small, tasteful zoom on hover */
+.box.alt.container .feature:hover .image img {
+  transform: scale(1.03);
+}
+
+/* Kill the old "eye icon" overlay if anything references it */
+.box.alt.container .image.icon:before {
+  display: none !important;
+}
+
+/* Text block under the image */
+.box.alt.container .feature .content {
+  display: block;
+  width: 100% !important;
+  padding: 1.25em 1.25em 1.5em !important;
+  text-align: left !important;
+  border: 0 !important;
+}
+
+.box.alt.container .feature .content h3 {
+  text-align: left;
+  margin: 0 0 0.5em 0;
+}
+
+.box.alt.container .feature .content p {
+  margin: 0;
+  line-height: 1.45;
+  opacity: 0.85;
+}
