@@ -2729,8 +2729,12 @@ table.green-bordered thead {
 
 #header {
   position: relative;
-  background: #000000 url("../../images/header-art.svg") center center / cover no-repeat;
-  min-height: min(43.3vw, 832px);
+  background-color: #000000;
+  background-image: url("../../images/header-art.svg");
+  background-position: center top;
+  background-repeat: repeat-x;
+  background-size: auto 500px;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3072,6 +3076,7 @@ table.green-bordered thead {
 				font-size: 1em;
 			}
 
+			
 		/* Section/Article */
 
 			header p {
@@ -3260,6 +3265,230 @@ table.green-bordered thead {
 				}
 
 	}
+
+
+
+/* ===== About section ===== */
+
+.about-section {
+  background: #f8e0b8;
+  padding: 2.5rem 0;
+}
+
+.about-card {
+  background: #f8e0b8;
+  color: #2b2c34;
+}
+
+.about-block {
+  margin-bottom: 2.25rem;
+}
+
+.about-block:last-child {
+  margin-bottom: 0;
+}
+
+.about-title {
+  margin: 0 0 0.85rem 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: left;
+}
+
+.about-text {
+  margin: 0;
+  max-width: 48rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.toolkit-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tool-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, max-content));
+  gap: 1rem;
+  justify-content: start;
+  align-items: start;
+}
+
+.tool-group {
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(43, 44, 52, 0.08);
+  border-radius: 1.25rem;
+  width: 100%;
+  height: fit-content;
+}
+
+.tool-group-title {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.tool-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.tool-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  line-height: 1;
+  overflow: visible;
+}
+
+.tool-logo {
+  width: 100%;
+  height: 100%;
+  max-width: 54px;
+  max-height: 54px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0 0.9rem;
+  align-items: center;
+  gap: 5rem;
+  margin: 1rem 0 0.75rem;
+}
+
+.logo-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.6rem;
+  min-width: 7rem;
+  padding: 0.55rem 1rem;
+  background: rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(43, 44, 52, 0.10);
+  border-radius: 999px;
+}
+
+.company-logo {
+  width: auto;
+  height: auto;
+  max-width: 140px;
+  max-height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-sony {
+  max-width: 170px;
+  max-height: 34px;
+}
+
+.logo-hpe {
+  max-width: 95px;
+  max-height: 34px;
+}
+
+.logo-daimler {
+  max-width: 110px;
+  max-height: 28px;
+}
+
+.logo-jlr {
+  max-width: 95px;
+  max-height: 30px;
+}
+
+.industries-line {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+
+@media screen and (max-width: 736px) {
+  .about-section {
+    padding: 2rem 0;
+  }
+
+  .about-title {
+    font-size: 1.35rem;
+  }
+
+  .tool-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-group {
+    padding: 0.95rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .tool-icon {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.4rem;
+  }
+
+  .logo-pill {
+    min-height: 2.75rem;
+    font-size: 0.82rem;
+  }
+}
+
+.tooltip {
+  position: relative;
+  overflow: visible;
+}
+
+.tooltip-text {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  background: #2b2c34;
+  color: #ffffff;
+  padding: 0.35rem 0.55rem;
+  border-radius: 0.45rem;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.08s ease, visibility 0.08s ease;
+  pointer-events: none;
+}
+
+.tooltip:hover .tooltip-text,
+.tooltip:focus-within .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+}
 
 /* Projects */
 
