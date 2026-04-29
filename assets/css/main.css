@@ -17,7 +17,7 @@
 
   --page-width: min(1260px, calc(100vw - clamp(24px, 4vw, 80px)));
   --card-width: min(1150px, 100%);
-  --page-gap: clamp(24px, 3vw, 60px);
+  --page-gap: clamp(24px, 3vw, 20px);
   --page-padding: clamp(24px, 4vw, 72px);
   --container-width: 51em;
   --container-width-medium: 38.25em;
@@ -1526,7 +1526,7 @@ input[type="button"].small,
   padding: 0.7rem 1.9rem;
   border: 1px solid transparent;
   border-radius: var(--radius-pill);
-  background: var(--primary);
+  background: var(--secondary);
   color: var(--white);
   font-family: var(--font-heading);
   font-size: 0.78rem;
@@ -1534,12 +1534,15 @@ input[type="button"].small,
   letter-spacing: 0.04em;
   line-height: 1;
   text-transform: uppercase;
-  box-shadow: var(--shadow-button);
+  box-shadow: 0 10px 24px rgba(170, 142, 227, 0.28);
 }
 
-#footer .button:hover {
-  background: var(--secondary);
+#footer .button:hover,
+#footer .button:focus-visible {
+  background: var(--primary);
   color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-button);
 }
 
 .footer-title-secondary {
@@ -1566,17 +1569,21 @@ input[type="button"].small,
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.28);
-  background: rgba(255,255,255,0.06);
-  color: #ffffff;
+  border: 1px solid transparent;
+  background: var(--secondary);
+  color: var(--white);
   font-size: 2rem;
-  transition: all 180ms ease;
+  box-shadow: 0 8px 18px rgba(170, 142, 227, 0.28);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
-#footer .icons li a:hover {
+#footer .icons li a:hover,
+#footer .icons li a:focus-visible {
   transform: translateY(-2px);
-  background: rgba(255,255,255,0.12);
-  border-color: #aa8ee3;
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+  box-shadow: var(--shadow-button);
 }
 
 #footer .icons .label {
