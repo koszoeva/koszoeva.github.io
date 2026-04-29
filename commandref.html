@@ -1,78 +1,58 @@
 <!DOCTYPE HTML>
-<!--
-	Directive by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Portfolio | Éva Kószó</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-	
+<head>
+  <title>Command reference sample | Éva Kószó</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/subpage.css" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+</head>
+<body class="is-preload subpage">
 
-	
-	</head>
-	<body class="is-preload">
+  <!-- Header -->
+  <div id="header" class="subpage-header">
+    <a class="subpage-home-link" href="https://koszoeva.github.io" aria-label="Back to portfolio homepage">
+      <span class="subpage-kicker">Éva Kószó</span>
+      <span class="subpage-role">Technical Writer &amp; Illustrator</span>
+      <span class="subpage-label">Portfolio</span>
+    </a>
+  </div>
 
-		<!-- Header -->
-		<div id="header">
-			<a href="https://koszoeva.github.io">
-			<img src="images/logo_ke.png" alt="" width="320" />
-			<p style="font-family: 'Playfair Display';">Technical Writer & Illustrator</p>
-			<p> </p>	
-			<h2 style="font-family: 'Poppins'; font-weight: 600;">PORTFOLIO</h2>
-		</a>
-		</div>
+  <!-- Content -->
+  <main class="subpage-main page-shell page-auto">
+    <article class="subpage-document page-frame">
+      <div class="subpage-actions">
+        <a href="https://koszoeva.github.io" class="portfolio-cta">Back to portfolio</a>
+        <a href="commandref.md" target="_blank" rel="noopener noreferrer" class="portfolio-cta portfolio-cta-secondary">See Markdown</a>
+      </div>
 
-			<!--TW comment-->
+      <header class="doc-title-block">
+        <h1>Amazon Web Services</h1>
+        <p>S3 High-Level Commands</p>
+      </header>
 
-				<div class="box container">
-					<header style="padding-bottom: 0% ;">
-						<h2>Command reference sample</h2>
-						<p style="text-transform: none; text-align: left">Scroll down for the rewritten version of the AWS 
-							<i>S3 High-Level Commands</i>, based on 
-							<a href="https://docs.aws.amazon.com/cli/latest/reference/s3/">an old version of the AWS S3 documentation</a>. <br>
-							The guide was written in Markdown and converted to HTML using Pandoc. 
-							<br>The HTML output was slightly adjusted to align with the portfolio template.</p>
-							<p><a href="commandref.md" target="new" class="button">Check out the markdown file</a>
-						</p>
-					</header>
-				</div>
-
-
-				<!--Content-->
-
-				<div class="box container" style="background-color: #ffffff; border: 4px solid #fda400;">
-					<section style="background-color: #fda400">
-						<h2 id="transpose-pitch-speed-loop-for-videos" >Amazon Web Services</h2>
-						<h3 id="quick-guide-to-the-google-chrome-extension">S3 High-Level Commands</h3>
-						</section><section>
-
-
-
-<p>This guide provides you with a high-level overview of the S3 commands.</p>
+      <div class="doc-content">
+        <p>This guide provides you with a high-level overview of the S3 commands.</p>
 
 <!--Path Arguments-->
 
-<h2 id="path-arguments" style="background-color: #fda400">Path Arguments</h2>
+<h2 id="path-arguments">Path Arguments</h2>
 <p>A path argument specifies the URL of a resource. It can either of
 <strong>LocalPath</strong> or <strong>S3Uri</strong> type; at least one
 of these must be specified.</p>
 
-<h3 id="localpath" style="text-align: left">LocalPath</h3>
+<h3 id="localpath">LocalPath</h3>
 <p>LocalPath points to a local file or directory. It can be either an
 absolute or a relative path.</p>
 
-<h3 id="s3uri" style="text-align: left">S3Uri</h3>
+<h3 id="s3uri">S3Uri</h3>
 <p>S3Uri can either specify the location of an S3 object, prefix, or
 bucket; or an S3 access point.</p>
 <p>An S3Uri must start with <em>s3://</em>. Prefixes are separated by
 forward slashes.</p>
 
-<h4 id="specifying-a-location" style="text-align: left">Specifying a location</h4>
+<h4 id="specifying-a-location">Specifying a location</h4>
 <p>Use the <code>s3://mybucket/mykey</code> syntax to specify the
 location of a resource.</p>
 <p><strong>Example:</strong></p>
@@ -84,14 +64,14 @@ location of a resource.</p>
 <li><em>mybucket</em> is the S3 bucket</li>
 </ul>
 
-<h4 id="specifying-an-access-point" style="text-align: left">Specifying an access point</h4>
+<h4 id="specifying-an-access-point">Specifying an access point</h4>
 <p>S3Uri can also specify S3 access points in
 <code>s3://&lt;access-point-arn&gt;/&lt;key&gt;</code> format.</p>
 <p><strong>Example:</strong></p>
 <p>In the
-<code style="width:100%;">s3://arn:aws:s3:us-west-2:123456789012:accesspoint/myaccesspoint/mykey</code>
+<code>s3://arn:aws:s3:us-west-2:123456789012:accesspoint/myaccesspoint/mykey</code>
 S3Uri:</p>
-<ul style="width:100%;">
+<ul>
 <li><em>myaccesspoint</em> is the access point</li>
 <li><em>arn:aws:s3:us-west-2:123456789012:accesspoint/myaccesspoint</em>
 is the ARN</li>
@@ -99,11 +79,11 @@ is the ARN</li>
 </ul>
 <blockquote class="blockquote-orange"><strong>NOTE:</strong> Similar to bucket names, you can also use
 prefixes with access point ARNs for the S3Uri. For example:
-<code style="width:100%;">s3://arn:aws:s3:us-west-2:123456789012:accesspoint/myaccesspoint/myprefix/</code></blockquote>
+<code>s3://arn:aws:s3:us-west-2:123456789012:accesspoint/myaccesspoint/myprefix/</code></blockquote>
 
 <!--Order of Path Arguments-->
 
-<h2 id="order-of-path-arguments" style="background-color: #fda400">Order of Path Arguments</h2>
+<h2 id="order-of-path-arguments">Order of Path Arguments</h2>
 <p>Commands can have up to two positional path arguments:</p>
 <ul>
 <li>The first path argument represents the source, which is the local
@@ -117,7 +97,7 @@ the source.</p>
 
 <!--Single Local File and S3 Object Operations-->
 
-<h2 id="single-local-file-and-s3-object-operations" style="background-color: #fda400">Single Local File
+<h2 id="single-local-file-and-s3-object-operations">Single Local File
 and S3 Object Operations</h2>
 <p>The following commands perform operations only on a single file or S3
 object by default. Use the <code>--recursive</code> flag to run these
@@ -150,7 +130,7 @@ the preference of the operating system.</li>
 
 <!--Directory and S3 Prefix Operations-->
 
-<h2 id="directory-and-s3-prefix-operations" style="background-color: #fda400">Directory and S3 Prefix
+<h2 id="directory-and-s3-prefix-operations">Directory and S3 Prefix
 Operations</h2>
 <p>The following commands always perform operations on the contents of a
 local directory or S3 prefix/bucket, regardless of whether the path
@@ -165,7 +145,7 @@ argument ends with a slash or not:</p>
 
 <!--Using Filters-->
 
-<h2 id="using-filters" style="background-color: #fda400">Using Filters</h2>
+<h2 id="using-filters">Using Filters</h2>
 <p>Most commands have <code>--exclude "&lt;value&gt;"</code> and
 <code>--include "&lt;value&gt;"</code> parameters that either exclude
 or include a particular file or object.</p>
@@ -223,7 +203,7 @@ extension.</p>
 <strong>directory</strong>. If the source is a file instead of a
 directory, then the directory containing the file is considered the
 source directory.</p>
-<h3 id="examples" style="text-align: left">Examples</h3>
+<h3 id="examples">Examples</h3>
 <p>The following examples demonstrate the behavior of commands with the
 following source directory.</p>
 <pre class="code-block"><code>/tmp/foo/
@@ -234,62 +214,62 @@ following source directory.</p>
   bar.txt
   baz.jpg</code></pre>
 
-<p>
 <pre class="code-block"><code>aws s3 sync /tmp/foo s3://bucket/</code></pre>
-This command synchronizes the /tmp/foo directory with the
+<p>This command synchronizes the /tmp/foo directory with the
 s3://bucket/.</p>
 
-<p>
 <pre class="code-block"><code>aws s3 cp /tmp/foo s3://bucket/ --recursive --exclude &quot;.git/*&quot;</code></pre>
-This command copies the content of /tmp/foo to the s3://bucket/,
+<p>This command copies the content of /tmp/foo to the s3://bucket/,
 except for the content of the .git subfolder (.git/config and
 .git/description).</p>
 
-<p>
 <pre class="code-block"><code>aws s3 cp /tmp/foo/ s3://bucket/ --recursive --exclude &quot;ba*&quot;</code></pre>
-This command copies the content of /tmp/foo to the s3://bucket/,
+<p>This command copies the content of /tmp/foo to the s3://bucket/,
 except for bar.txt and baz.jpg.</p>
 
-<p>
 <pre class="code-block"><code>aws s3 cp /tmp/foo/ s3://bucket/ --recursive --exclude &quot;*&quot; --include &quot;*.jpg&quot;</code></pre>
-This command upload only .jpg files.</p>
+<p>This command uploads only .jpg files.</p>
 
-<p>
 <pre class="code-block"><code>aws s3 cp /tmp/foo/ s3://bucket/ --recursive \
---exclude &quot;*&quot; --include &quot;*.jpg&quot; --include &quot;*.txt</code></pre>
+--exclude &quot;*&quot; --include &quot;*.jpg&quot; --include &quot;*.txt&quot;</code></pre>
 <p>This command uploads .jpg and .txt files.</p>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+<div id="footer">
+  <div class="footer-content">
+    <footer class="footer-cta-block">
+      <h2 class="footer-title">Get in touch</h2>
+      <p>See my resume if you haven't already.<br/>It contains my contact info and much more!</p>
+      <ul class="actions special">
+        <li><a class="button" href="https://koszoeva.github.io/cv">Check out my CV</a></li>
+      </ul>
+    </footer>
+
+    <div class="footer-social-block">
+      <h2 class="footer-title footer-title-secondary">Social links &amp; other cool stuff</h2>
+      <ul class="icons">
+        <li><a class="icon fa-solid fa-envelope" href="mailto:koszoeva@yahoo.com"><span class="label">Email</span></a></li>
+        <li><a class="icon brands fa-linkedin" href="https://www.linkedin.com/in/eva-koszo/"><span class="label">LinkedIn</span></a></li>
+        <li><a class="icon brands fa-github" href="https://github.com/koszoeva"><span class="label">GitHub</span></a></li>
+        <li><a class="icon brands fa-youtube" href="https://www.youtube.com/@alohaandanarchy/"><span class="label">YouTube</span></a></li>
+      </ul>
+    </div>
+
+    <ul class="copyright">
+      <li>© Untitled. All rights reserved.</li><li>Design: Éva Kószó × ChatGPT</li>
+    </ul>
+  </div>
 </div>
 
-		<!-- Footer -->
-		<div id="footer">
-			<footer class="major container medium">
-				<h2 style="font-family: 'Playfair Display';">Get in touch</h2>
-				<p>See my resume if you haven't already.<br>It contains my contact info and much more!</p>
-				<ul class="actions special">
-					<li><a href="https://koszoeva.github.io/cv" class="button">Check out my CV</a></li>
-				</ul>
-			</footer>
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 
-			<h2 style="font-family: 'Playfair Display'; padding-top: 40px;">Social links & other cool stuff</h2>
-			<ul class="icons">
-				<li><a href="mailto:koszoeva@yahoo.com" class="icon fa-envelope"></a></li>
-				<li><a href="https://www.linkedin.com/in/eva-koszo/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-				<li><a href="https://github.com/koszoeva" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-				<li><a href="https://www.youtube.com/@alohaandanarchy/" class="icon brands fa-youtube"><span class="label">Dribbble</span></a></li>
-			</ul>
-
-			<ul class="copyright">
-				<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>
