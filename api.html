@@ -11,213 +11,152 @@
 		<meta charset="utf-8" />
 		<meta id="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/subpage.css" />
 		<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 	</head>
 
-	<body class="is-preload">
-
+	<body class="is-preload subpage">
 		<!-- Header -->
-		<div id="header">
-			<a href="https://koszoeva.github.io">
-			<img src="images/logo_ke.png" alt="" width="320" />
-			<p style="font-family: 'Playfair Display';">Technical Writer & Illustrator</p>
-			<p> </p>	
-			<h2 style="font-family: 'Poppins'; font-weight: 600;">PORTFOLIO</h2>
-		</a>
+		<div id="header" class="subpage-header">
+			<a href="https://koszoeva.github.io" class="subpage-home-link">
+				<span class="subpage-kicker">Éva Kószó</span>
+				<span class="subpage-role">Technical Writer &amp; Illustrator</span>
+				<span class="subpage-label">Portfolio</span>
+			</a>
 		</div>
+		<!-- Main content -->
+		<main class="subpage-main page-shell">
+			<article class="subpage-document page-frame">
+				<section class="doc-title-block">
+					<h1>Snooker statistics API</h1>
+					<p>API for managing snooker players, tournaments, and match statistics</p>
+				</section>
 
-			<!--TW comment-->
-
-				<div class="box container">
-					<header style="padding-bottom: 0% ;">
-						<h2>Mock API document</h2>
-            <div>
-						<p style="text-transform: none; text-align: left">This is the documentation of a mock snooker statistics API.</p>
-            <p style="text-transform: none; text-align: left"><i>
-            The content is intended to showcase my writing style and skills. 
-            Please note that the documented API is fictional and may not be 
-            logically constructed, as my expertise lies in documenting APIs 
-            rather than creating them.</i></p>
-            </div>
-					</header>
-				</div>
-
-
-				<!--Intro-->
-
-<div class="container" style="background-color: #ffffff; border: 4px solid #0000BC; overflow: auto;">
+				<!-- API guide -->
+				<div class="doc-content api-guide">
 
    <style type="text/css">
-        body {
+        .api-guide {
+          box-sizing: border-box;
+          max-width: 100%;
+          padding: 20px;
+          overflow: auto;
+          background-color: #ffffff;
+        }
+
+.api-guide {
           font-family: 'Poppins', sans-serif;
           font-size: 15px;
           color: #444;
           margin-left: 20px;
           margin-right: 20px;
-        }
-        
-        h1	{
+        }.api-guide h1 {
           font-size: 25px;
-        }
-        h2	{
+          margin-bottom: 20px;
+          margin-top: 60px;
+          text-align: left;
+          padding-left: 20px;
+        }.api-guide h2 {
           font-size: 20px;
-        }
-        h3	{
+        }.api-guide h3 {
           font-size: 16px;
           font-weight: bold;
           text-align: left;
-        }
-        hr	{
+        }.api-guide hr {
           height: 1px;
           border: 0;
           color: #ddd;
           background-color: #ddd;
-        }
-        
-        .app-desc {
+        }.api-guide .app-desc {
           clear: both;
           margin-left: 20px;
-        }
-        .param-name {
+        }.api-guide .param-name {
           width: 100%;
-        }
-        .license-info {
+        }.api-guide .license-info {
           margin-left: 20px;
-        }
-        
-        .license-url {
+        }.api-guide .license-url {
           margin-left: 20px;
-        }
-        
-        .model {
+        }.api-guide .model {
           margin: 0 0 0px 20px;
-        }
-        
-        .method {
+        }.api-guide .method {
           background-color: transparent !important;
           margin-left: 20px;
           margin-right: 20px;
-        }
-        
-        .method-notes	{
+        }.api-guide .method-notes {
           margin: 10px 0 20px 0;
           font-size: 90%;
           color: #555;
-        }
-        
-        pre {
+        }.api-guide pre {
           padding: 10px;
           margin-bottom: 2px;
-        }
-        
-        .http-method {
+        }.api-guide .http-method {
         text-transform: uppercase;
-        }
-        
-        pre.get {
-          background-color: #0000BC;
-        }
-        
-        pre.post {
+        }.api-guide pre.get {
+          background-color: #3d0db1;
+          margin-top: 40px;
+        }.api-guide pre.post {
           background-color: #037a31;
-        }
-        
-        pre.put {
+          margin-top: 40px;
+        }.api-guide pre.put {
           background-color: #fc9b13;
-        }
-        
-        pre.delete {
+          margin-top: 40px;
+        }.api-guide pre.delete {
           background-color: #a70208;
-        }
-        
-        .huge	{
+          margin-top: 40px;
+        }.api-guide .huge {
           color: #fff;
-        }
-        
-        pre.example {
-          background-color: #f3f3f3;
-          padding: 10px; 
-          border: 1px solid #ddd;
-        }
-        
-        code {
+          font-size: 0.6em;
+        }.api-guide pre.example {
+          padding: 10px;
+        }.api-guide code {
           white-space: pre;
-        }
-        
-        .nickname {
+        }.api-guide .nickname {
           font-weight: bold;
-        }
-        
-        .method-path {
+        }.api-guide .method-path {
           font-family: 'Share Tech Mono', monospace;
-          font-size: 1.5em;
-          background-color: #0000BC;
-        }
-        
-        .up {
+          font-size: 2em;
+        }.api-guide .up {
           float:right;
-        }
-        
-        .parameter {
+        }.api-guide .parameter {
           width: 500px;
-        }
-        
-        .param {
+        }.api-guide .param {
           width: 500px;
           padding: 10px 0 0 20px;
           font-weight: bold;
           font-family: 'Share Tech Mono', monospace;
-        }
-        
-        .param-desc {
+        }.api-guide .param-desc {
           width: 700px;
           padding: 0 0 0 20px;
           color: #777;
-        }
-        
-        .param-type {
+        }.api-guide .param-type {
           font-style: italic;
-        }
-        
-        .param-enum-header {
+        }.api-guide .param-enum-header {
         width: 700px;
         padding: 0 0 0 60px;
         color: #777;
         font-weight: bold;
-        }
-        
-        .param-enum {
+        }.api-guide .param-enum {
         width: 700px;
         padding: 0 0 0 80px;
         color: #777;
         font-style: italic;
-        }
-        
-        .field-label {
-          padding: 0;
+        }.api-guide .field-label {
+          padding-top: 20px;
+          padding-bottom: 10px;
           margin: 0;
           clear: both;
-        }
-        
-        .field-items	{
+          font-size: larger;
+        }.api-guide .field-items {
           padding: 0 0 15px 0;
           margin-bottom: 15px;
-        }
-        
-        .return-type {
+        }.api-guide .return-type {
           clear: both;
           padding-bottom: 10px;
-        }
-        
-        .param-header {
+        }.api-guide .param-header {
           font-weight: bold;
-        }
-        
-        .method-tags {
+        }.api-guide .method-tags {
           text-align: right;
-        }
-        
-        .method-tag {
+        }.api-guide .method-tag {
           background: none repeat scroll 0% 0% #24A600;
           border-radius: 3px;
           padding: 2px 10px;
@@ -226,21 +165,27 @@
           display: inline-block;
           text-decoration: none;
         }
+
+        .api-guide .toc-heading,
+        .api-guide .toc-section {
+          counter-increment: none !important;
+        }
+
+        .api-guide .toc-heading::before,
+        .api-guide .toc-section::before {
+          content: none !important;
+        }
       </style>
 
-
-  <h1>Snooker Statistics API</h1>
-  <p style="padding: 20px">API for managing snooker players, tournaments, and match statistics.</p>
-
   <h2><a id="__Methods">Methods</a></h2>
-  <p style="color:#0000BC; padding: 0 0 0 20px;">[ Jump to <a href="#__Models" style="color:#0000BC;">Models</a> ]</p>
+  <p style="color:#3d0db1; padding: 0 0 0 20px;">[ Jump to <a href="#__Models" style="color:#3d0db1;">Models</a> ]</p>
 
 
 
     <!--TOC -->
 
-  <h3 style="text-align: left; padding: 0 0 0 20px;">Table of Contents </h3>
-  <h4 style="text-align: left; padding: 0 0 0 20px;"><a href="#Players">Players</a></h4>
+  <h3 class="toc-heading" style="text-align: left; padding: 0 0 0 20px;">Table of Contents </h3>
+  <h4 class="toc-section" style="text-align: left; padding: 0 0 0 0px;"><a href="#Players">Players</a></h4>
   <ul>
   <li><a href="#playersGet"><code><span class="http-method">get</span> /players</code></a></li>
   <li><a href="#playersPlayerIdDelete"><code><span class="http-method">delete</span> /players/{playerId}</code></a></li>
@@ -248,7 +193,7 @@
   <li><a href="#playersPlayerIdPut"><code><span class="http-method">put</span> /players/{playerId}</code></a></li>
   <li><a href="#playersPost"><code><span class="http-method">post</span> /players</code></a></li>
   </ul>
-  <h4 style="text-align: left; padding: 0 0 0 20px;"><a href="#Matches">Matches</a></h4>
+  <h4 class="toc-section" style="text-align: left; padding: 0 0 0 0px;"><a href="#Matches">Matches</a></h4>
   <ul>
   <li><a href="#matchesGet"><code><span class="http-method">get</span> /matches</code></a></li>
   <li><a href="#matchesMatchIdDelete"><code><span class="http-method">delete</span> /matches/{matchId}</code></a></li>
@@ -256,7 +201,7 @@
   <li><a href="#matchesMatchIdPut"><code><span class="http-method">put</span> /matches/{matchId}</code></a></li>
   <li><a href="#matchesPost"><code><span class="http-method">post</span> /matches</code></a></li>
   </ul>
-  <h4 style="text-align: left; padding: 0 0 0 20px;"><a href="#Tournaments">Tournaments</a></h4>
+  <h4 class="toc-section" style="text-align: left; padding: 0 0 0 0px;"><a href="#Tournaments">Tournaments</a></h4>
   <ul>
   <li><a href="#tournamentsGet"><code><span class="http-method">get</span> /tournaments</code></a></li>
   <li><a href="#tournamentsPost"><code><span class="http-method">post</span> /tournaments</code></a></li>
@@ -820,9 +765,9 @@
   <hr/>
 
   <h2><a id="__Models">Models</a></h2>
-  <p style="color:#0000BC; padding: 0 0 0 20px;">[ Jump to <a href="#__Methods" style="color:#0000BC;">Methods</a> ]</p>
+  <p style="color:#3d0db1; padding: 0 0 0 20px;">[ Jump to <a href="#__Methods" style="color:#3d0db1;">Methods</a> ]</p>
 
-  <h3 style="padding: 0 0 0 20px;">Table of Contents</h3>
+  <h3 class="toc-heading" style="padding: 0 0 0 20px;">Table of Contents</h3>
   <ol style="padding: 0 0 0 80px;">
     <li><a href="#Match"><code>Match</code></a></li>
     <li><a href="#Player"><code>Player</code></a></li>
@@ -877,9 +822,9 @@
   </div>
   </div>
 </div>
-</div>
-</body>
-
+				</div>
+			</article>
+		</main>
 
 		<!-- Footer -->
 
@@ -914,5 +859,5 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-
+</body>
 </html>
