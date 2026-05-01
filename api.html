@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Portfolio | Éva Kószó</title>
+<title>API guide sample</title>
 		<meta charset="utf-8" />
 		<meta id="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -25,7 +25,6 @@
     <!-- Page actions -->
     <div class="subpage-actions">
 <a class="portfolio-cta" href="https://koszoeva.github.io">Back to portfolio</a>
-<a class="portfolio-cta portfolio-cta-secondary" href="transpose.md" rel="noopener noreferrer" target="_blank">See Markdown</a>
 </div>
 
     <!-- Document title -->
@@ -33,6 +32,12 @@
 					<h1>Snooker statistics API</h1>
 					<p>API for managing snooker players, tournaments, and match statistics</p>
 				</section>
+
+          <p>
+    This API provides endpoints to manage snooker players, tournaments, and match data.
+    It supports retrieving, creating, updating, and deleting entities, along with
+    accessing structured data models used across the system.
+  </p>
 
     <!-- API guide -->
     <div class="doc-content api-guide">
@@ -48,7 +53,7 @@
   overflow: auto;
   color: #444;
   background-color: #ffffff;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Ubuntu Sans', sans-serif;
   font-size: 15px;
 }
 
@@ -84,7 +89,7 @@
   content: counter(chapter, upper-roman) ". " !important;
 }
 
-.api-guide #__Models {
+.api-guide #__Schemas {
   counter-reset: h3;
 }
 
@@ -98,20 +103,21 @@
   content: counter(h3) ". ";
 }
 
+
 /* Keep TOCs independent from generated section numbering. */
 .api-guide .toc-heading,
 .api-guide .toc-section,
-.api-guide .models-toc li {
+.api-guide .schemas-toc li {
   counter-increment: none !important;
 }
 
 .api-guide .toc-heading::before,
 .api-guide .toc-section::before,
-.api-guide .models-toc li::before {
+.api-guide .schemas-toc li::before {
   content: none !important;
 }
 
-.api-guide .models-toc {
+.api-guide .schemas-toc {
   list-style: decimal;
   counter-reset: none;
 }
@@ -199,6 +205,7 @@
   padding-bottom: 10px;
   font-size: larger;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .api-guide .field-items {
@@ -240,6 +247,7 @@
 
 .api-guide pre.example {
   margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .api-guide .example-label {
@@ -257,7 +265,7 @@
 
 <!-- API methods -->
 <h2 id="__Methods" class="chapter">Methods</h2>
-  <p class="api-jump">[ Jump to <a href="#__Models">Models</a> ]</p>
+  <p class="api-jump">[ Jump to <a href="#__Schemas">Schemas</a> ]</p>
 
     
 
@@ -794,14 +802,14 @@
 </div> 
   <hr/>
 
-  <!-- API models -->
-<h2 id="__Models" class="chapter">Models</h2>
+  <!-- API schemas -->
+<h2 id="__Schemas" class="chapter">Schemas</h2>
   <p class="api-jump">[ Jump to <a href="#__Methods">Methods</a> ]</p>
 
-<!-- Models TOC -->
-<h2 id="table-of-models" class="no-number">Table of contents</h2>
+<!-- Schemas TOC -->
+<h2 id="table-of-schemas" class="no-number">Table of contents</h2>
 
-<ol class="models-toc">
+<ol class="schemas-toc">
     <li><a href="#Match"><code>Match</code></a></li>
     <li><a href="#Player"><code>Player</code></a></li>
     <li><a href="#Tournament"><code>Tournament</code></a></li>
