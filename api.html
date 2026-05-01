@@ -24,8 +24,22 @@
 				<span class="subpage-label">Portfolio</span>
 			</a>
 		</div>
-		<!-- Main content -->
+
+
+    
+		
 		<main class="subpage-main page-shell">
+
+      <!-- Buttons -->
+<main class="subpage-main page-shell page-auto">
+<article class="subpage-document page-frame">
+<div class="subpage-actions">
+<a class="portfolio-cta" href="https://koszoeva.github.io">Back to portfolio</a>
+<a class="portfolio-cta portfolio-cta-secondary" href="transpose.md" rel="noopener noreferrer" target="_blank">See Markdown</a>
+</div>
+
+<!-- Main content -->
+
 			<article class="subpage-document page-frame">
 				<section class="doc-title-block">
 					<h1>Snooker statistics API</h1>
@@ -177,38 +191,49 @@
         }
       </style>
 
-  <h2><a id="__Methods">Methods</a></h2>
+  <h2 id="__Methods">Methods</h2>
   <p style="color:#3d0db1; padding: 0 0 0 20px;">[ Jump to <a href="#__Models" style="color:#3d0db1;">Models</a> ]</p>
 
 
 
     <!--TOC -->
 
-  <h3 class="toc-heading" style="text-align: left; padding: 0 0 0 20px;">Table of Contents </h3>
-  <h4 class="toc-section" style="text-align: left; padding: 0 0 0 0px;"><a href="#Players">Players</a></h4>
-  <ul>
-  <li><a href="#playersGet"><code><span class="http-method">get</span> /players</code></a></li>
-  <li><a href="#playersPlayerIdDelete"><code><span class="http-method">delete</span> /players/{playerId}</code></a></li>
-  <li><a href="#playersPlayerIdGet"><code><span class="http-method">get</span> /players/{playerId}</code></a></li>
-  <li><a href="#playersPlayerIdPut"><code><span class="http-method">put</span> /players/{playerId}</code></a></li>
-  <li><a href="#playersPost"><code><span class="http-method">post</span> /players</code></a></li>
-  </ul>
-  <h4 class="toc-section" style="text-align: left; padding: 0 0 0 0px;"><a href="#Matches">Matches</a></h4>
-  <ul>
-  <li><a href="#matchesGet"><code><span class="http-method">get</span> /matches</code></a></li>
-  <li><a href="#matchesMatchIdDelete"><code><span class="http-method">delete</span> /matches/{matchId}</code></a></li>
-  <li><a href="#matchesMatchIdGet"><code><span class="http-method">get</span> /matches/{matchId}</code></a></li>
-  <li><a href="#matchesMatchIdPut"><code><span class="http-method">put</span> /matches/{matchId}</code></a></li>
-  <li><a href="#matchesPost"><code><span class="http-method">post</span> /matches</code></a></li>
-  </ul>
-  <h4 class="toc-section" style="text-align: left; padding: 0 0 0 0px;"><a href="#Tournaments">Tournaments</a></h4>
-  <ul>
-  <li><a href="#tournamentsGet"><code><span class="http-method">get</span> /tournaments</code></a></li>
-  <li><a href="#tournamentsPost"><code><span class="http-method">post</span> /tournaments</code></a></li>
-  <li><a href="#tournamentsTournamentIdDelete"><code><span class="http-method">delete</span> /tournaments/{tournamentId}</code></a></li>
-  <li><a href="#tournamentsTournamentIdGet"><code><span class="http-method">get</span> /tournaments/{tournamentId}</code></a></li>
-  <li><a href="#tournamentsTournamentIdPut"><code><span class="http-method">put</span> /tournaments/{tournamentId}</code></a></li>
-  </ul>
+<h2 id="table-of-contents" class="no-number">Table of contents</h2>
+
+<ol>
+  <li>
+    <strong><a href="#Players">Players</a></strong>
+    <ol>
+      <li><a href="#playersGet"><code><span class="http-method">get</span> /players</code></a></li>
+      <li><a href="#playersPlayerIdDelete"><code><span class="http-method">delete</span> /players/{playerId}</code></a></li>
+      <li><a href="#playersPlayerIdGet"><code><span class="http-method">get</span> /players/{playerId}</code></a></li>
+      <li><a href="#playersPlayerIdPut"><code><span class="http-method">put</span> /players/{playerId}</code></a></li>
+      <li><a href="#playersPost"><code><span class="http-method">post</span> /players</code></a></li>
+    </ol>
+  </li>
+
+  <li>
+    <strong><a href="#Matches">Matches</a></strong>
+    <ol>
+      <li><a href="#matchesGet"><code><span class="http-method">get</span> /matches</code></a></li>
+      <li><a href="#matchesMatchIdDelete"><code><span class="http-method">delete</span> /matches/{matchId}</code></a></li>
+      <li><a href="#matchesMatchIdGet"><code><span class="http-method">get</span> /matches/{matchId}</code></a></li>
+      <li><a href="#matchesMatchIdPut"><code><span class="http-method">put</span> /matches/{matchId}</code></a></li>
+      <li><a href="#matchesPost"><code><span class="http-method">post</span> /matches</code></a></li>
+    </ol>
+  </li>
+
+  <li>
+    <strong><a href="#Tournaments">Tournaments</a></strong>
+    <ol>
+      <li><a href="#tournamentsGet"><code><span class="http-method">get</span> /tournaments</code></a></li>
+      <li><a href="#tournamentsPost"><code><span class="http-method">post</span> /tournaments</code></a></li>
+      <li><a href="#tournamentsTournamentIdDelete"><code><span class="http-method">delete</span> /tournaments/{tournamentId}</code></a></li>
+      <li><a href="#tournamentsTournamentIdGet"><code><span class="http-method">get</span> /tournaments/{tournamentId}</code></a></li>
+      <li><a href="#tournamentsTournamentIdPut"><code><span class="http-method">put</span> /tournaments/{tournamentId}</code></a></li>
+    </ol>
+  </li>
+</ol>
 
 
   <!-- PLAYERS -->
@@ -764,15 +789,16 @@
   </div> <!-- method -->
   <hr/>
 
-  <h2><a id="__Models">Models</a></h2>
+  <h2 id="__Models">Models</h2>
   <p style="color:#3d0db1; padding: 0 0 0 20px;">[ Jump to <a href="#__Methods" style="color:#3d0db1;">Methods</a> ]</p>
 
-  <h3 class="toc-heading" style="padding: 0 0 0 20px;">Table of Contents</h3>
-  <ol style="padding: 0 0 0 80px;">
+<h2 id="table-of-models" class="no-number">Table of contents</h2>
+
+<ol>
     <li><a href="#Match"><code>Match</code></a></li>
     <li><a href="#Player"><code>Player</code></a></li>
     <li><a href="#Tournament"><code>Tournament</code></a></li>
-  </ol>
+</ol>
 
 
 
