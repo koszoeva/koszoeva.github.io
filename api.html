@@ -189,9 +189,92 @@
         .api-guide .toc-section::before {
           content: none !important;
         }
+
+
+        /* API heading hierarchy and method boxes */
+        .api-guide .method-path {
+          display: flex;
+          align-items: center;
+          gap: 0.65rem;
+          margin-top: 40px;
+          margin-bottom: 10px;
+          padding-left: 0;
+          background: transparent !important;
+          color: inherit;
+          font-family: 'Share Tech Mono', monospace;
+          font-size: 1.25em;
+        }
+
+        .api-guide .method-path::before {
+          flex: 0 0 auto;
+        }
+
+        .api-guide .method-box {
+          display: inline-block;
+          flex: 1 1 auto;
+          padding: 10px 14px;
+          border-radius: 6px;
+          color: #ffffff;
+        }
+
+        .api-guide .method-box code {
+          background-color: transparent !important;
+          color: inherit;
+          font-size: 0.8em;
+        }
+
+        .api-guide .method-box.get { background-color: #3d0db1; }
+        .api-guide .method-box.post { background-color: #037a31; }
+        .api-guide .method-box.put { background-color: #fc9b13; }
+        .api-guide .method-box.delete { background-color: #a70208; }
+
+        .api-guide .field-label {
+          font-size: larger;
+          font-weight: bold;
+        }
+
+        .api-guide {
+          counter-reset: chapter;
+        }
+
+        .api-guide h2.chapter {
+          counter-increment: chapter;
+        }
+
+        .api-guide h2.chapter::before {
+          content: counter(chapter, upper-roman) ". " !important;
+        }
+
+        .api-guide .models-toc {
+          list-style: decimal;
+          counter-reset: none;
+        }
+
+        .api-guide .models-toc li {
+          counter-increment: none;
+        }
+
+        .api-guide .models-toc li::before {
+          content: none !important;
+        }
+
+        .api-guide #__Models {
+          counter-reset: h3;
+        }
+
+        .api-guide .model-heading {
+          counter-increment: h3;
+        }
+
+        .api-guide .model-heading::before {
+          content: counter(h3) ". ";
+        }
+
+        
+
       </style>
 
-  <h2 id="__Methods">Methods</h2>
+  <h2 id="__Methods" class="chapter">Methods</h2>
   <p style="color:#3d0db1; padding: 0 0 0 20px;">[ Jump to <a href="#__Models" style="color:#3d0db1;">Models</a> ]</p>
 
 
@@ -238,14 +321,13 @@
 
   <!-- PLAYERS -->
 
-  <h1><a id="Players">Players</a></h1>
+  <h2 id="Players">Players</h2>
   
-  <div class="method"><a id="playersGet"></a>
-    <div class="method-path">
-      <pre class="get"><code class="huge" style="background-color: transparent;"><span class="http-method">get</span> /players</code></pre></div>
+  <div class="method">
+    <h3 class="method-path" id="playersGet"><span class="method-box get"><code><span class="http-method">get</span> /players</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Returns the list of players in the database.</div>
 
-  <h3 class="field-label">Request</h3>
+  <h4 class="field-label">Request</h4>
   <div class="field-items">
     <ul>
       <li style="padding-bottom: 15px;"><div><code><b>playerId</b></code> (optional)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
@@ -254,7 +336,7 @@
     </ul>
 </div>
 
-<h3 class="field-label" style="padding-bottom: 20px;">Response</h3>
+<h4 class="field-label" style="padding-bottom: 20px;">Response</h4>
 <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
 
     <p style="margin-left: 20px;"><b>Example data</b></p>
@@ -281,19 +363,18 @@
   
   <hr/>
   
-  <div class="method"><a id="playersPlayerIdDelete"></a>
-    <div class="method-path">
-       <pre class="delete"><code class="huge" style="background-color: transparent;"><span class="http-method">delete</span> /players/{playerId}</code></pre></div>
+  <div class="method">
+    <h3 class="method-path" id="playersPlayerIdDelete"><span class="method-box delete"><code><span class="http-method">delete</span> /players/{playerId}</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Deletes an existing player based on their ID.</div>
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div style="padding: 0 0 20px 0;">
       <ul>
         <li><div><code><b>playerId</b></code> (required)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
       </ul>
     </div>
 
-    <h3 class="field-label">Response</h3>
+    <h4 class="field-label">Response</h4>
     <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">204 - Deleted</p>
     <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
 
@@ -302,19 +383,18 @@
   <hr/>
   
 
-  <div class="method"><a id="playersPlayerIdGet"></a>
-    <div class="method-path">
-    <pre class="get"><code class="huge" style="background-color: transparent;"><span class="http-method">get</span> /players/{playerId}</code></pre></div>
+  <div class="method">
+    <h3 class="method-path" id="playersPlayerIdGet"><span class="method-box get"><code><span class="http-method">get</span> /players/{playerId}</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Returns an existing player based on their ID.</div>
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div style="padding: 0 0 20px 0;">
       <ul>
         <li><div><code><b>playerId</b></code> (required)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
       </ul>
     </div>
 
-    <h3 class="field-label">Response</h3>
+    <h4 class="field-label">Response</h4>
     
     <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
 
@@ -337,12 +417,11 @@
   <hr/>
   
   
-    <div class="method"><a id="playersPlayerIdPut"></a>
-    <div class="method-path">
-    <pre class="put"><code class="huge" style="background-color: transparent;"><span class="http-method">put</span> /players/{playerId}</code></pre></div>
+    <div class="method">
+    <h3 class="method-path" id="playersPlayerIdPut"><span class="method-box put"><code><span class="http-method">put</span> /players/{playerId}</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Updates an existing player based on their ID.</div>
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div style="padding: 0 0 20px 0;">
       <ul>
         <li style="padding-bottom: 15px;"><div><code><b>playerId</b></code> (required)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
@@ -354,7 +433,7 @@
       </ul>
   </div>
 
-    <h3 class="field-label">Response</h3>
+    <h4 class="field-label">Response</h4>
 
     <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
 
@@ -376,13 +455,12 @@
   
   <hr/>
   
-  <div class="method"><a id="playersPost"></a>
-    <div class="method-path">
-    <pre class="post"><code class="huge" style="background-color: transparent;"><span class="http-method">post</span> /players</code></pre></div>
+  <div class="method">
+    <h3 class="method-path" id="playersPost"><span class="method-box post"><code><span class="http-method">post</span> /players</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Creates a new player.</div>
 
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div style="padding: 0 0 20px 0;">
       <ul>
         <li style="padding-bottom: 15px;"><div><code><b>playerId</b></code> (required)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
@@ -396,7 +474,7 @@
 
 
 
-    <h3 class="field-label">Response</h3>
+    <h4 class="field-label">Response</h4>
 
     <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">201 - Created</p>
 
@@ -417,14 +495,13 @@
 
     <!--MATCHES -->
 
-  <h1><a id="Matches">Matches</a></h1>
+  <h2 id="Matches">Matches</h2>
 
-  <div class="method"><a id="matchesGet"></a>
-    <div class="method-path">
-    <pre class="get"><code class="huge" style="background-color: transparent;"><span class="http-method">get</span> /matches</code></pre></div>
+  <div class="method">
+    <h3 class="method-path" id="matchesGet"><span class="method-box get"><code><span class="http-method">get</span> /matches</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Returns a list of matches.</div>
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div style="padding: 0 0 20px 0;">
       <ul>
         <li style="padding-bottom: 15px;"><div><code><b>playerId</b></code> (optional)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
@@ -432,7 +509,7 @@
       </ul>
     </div>
 
-    <h3 class="field-label">Response</h3>
+    <h4 class="field-label">Response</h4>
     <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
 
     <p style="margin-left: 20px;"><b>Example data</b></p>
@@ -464,19 +541,18 @@
   
   <hr/>
   
-    <div class="method"><a id="matchesMatchIdDelete"></a>
-    <div class="method-path">
-    <pre class="delete"><code class="huge" style="background-color: transparent;"><span class="http-method">delete</span> /matches/{matchId}</code></pre></div>
+    <div class="method">
+    <h3 class="method-path" id="matchesMatchIdDelete"><span class="method-box delete"><code><span class="http-method">delete</span> /matches/{matchId}</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Deletes an existing match by its ID.</div>
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div class="field-items">
         <ul>
           <li><div><code><b>matchId</b></code> (required)<br>The ID of the match.<br><b>Type: </b>String<br><b>Example: </b><code>112233</code></div></li>
         </ul>
       </div>
 
-    <h3 class="field-label">Response</h3>
+    <h4 class="field-label">Response</h4>
 
         <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">204 - Deleted</p>
         <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
@@ -485,13 +561,11 @@
 
   <hr/>
   
-    <div class="method"><a id="matchesMatchIdGet"></a>
-
-    <div class="method-path">
-    <pre class="get"><code class="huge" style="background-color: transparent;"><span class="http-method">get</span> /matches/{matchId}</code></pre></div>
+    <div class="method">
+    <h3 class="method-path" id="matchesMatchIdGet"><span class="method-box get"><code><span class="http-method">get</span> /matches/{matchId}</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Returns a match by its ID.</div>
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div class="field-items">
       <div class="field-items">
         <ul>
@@ -499,7 +573,7 @@
         </ul>
       </div>
 
-          <h3 class="field-label">Response</h3>
+          <h4 class="field-label">Response</h4>
    
     <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
 
@@ -523,12 +597,11 @@
   
   <hr/>
   
-    <div class="method"><a id="matchesMatchIdPut"></a>
-    <div class="method-path">
-    <pre class="put"><code class="huge" style="background-color: transparent;"><span class="http-method">put</span> /matches/{matchId}</code></pre></div>
+    <div class="method">
+    <h3 class="method-path" id="matchesMatchIdPut"><span class="method-box put"><code><span class="http-method">put</span> /matches/{matchId}</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Updates a match by its ID.</div>
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div class="field-items">
       <div class="field-items">
         <ul>
@@ -536,7 +609,7 @@
         </ul>
       </div>
 
-    <h3 class="field-label">Response</h3>
+    <h4 class="field-label">Response</h4>
     <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
 
     <p style="margin-left: 20px;"><b>Example data</b></p>
@@ -558,13 +631,12 @@
   
   <hr/>
   
-  <div class="method"><a id="matchesPost"></a>
-    <div class="method-path">
-    <pre class="post"><code class="huge" style="background-color: transparent;"><span class="http-method">post</span> /matches</code></pre></div>
+  <div class="method">
+    <h3 class="method-path" id="matchesPost"><span class="method-box post"><code><span class="http-method">post</span> /matches</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Creates a new match.</div>
 
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div class="field-items" style="padding: 0 0 0 20px;">
       <ul>
           <li style="padding-bottom: 15px;"><div><code><b>matchId</b></code> (required)<br>The ID of the match.<br><b>Type: </b>String<br><b>Example: </b><code>112233</code></div></li>
@@ -578,7 +650,7 @@
         </ul>
     </div>
 
-    <h3 class="field-label">Response</h3>
+    <h4 class="field-label">Response</h4>
     <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">201 - Created</p>
 
     <p style="margin-left: 20px;"><b>Example data</b></p>
@@ -603,13 +675,12 @@
 
 <!-- TOURNAMENTS -->
 
-  <h1><a id="Tournaments">Tournaments</a></h1>
-  <div class="method"><a id="tournamentsGet"></a>
-    <div class="method-path">
-    <pre class="get"><code class="huge" style="background-color: transparent;"><span class="http-method">get</span> /tournaments</code></pre></div>
+  <h2 id="Tournaments">Tournaments</h2>
+  <div class="method">
+    <h3 class="method-path" id="tournamentsGet"><span class="method-box get"><code><span class="http-method">get</span> /tournaments</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Returns a list of tournaments.</div>
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div class="field-items">
       <ul>
         <li style="padding-bottom: 15px;"><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
@@ -617,7 +688,7 @@
       </ul>
   </div>
 
-  <h3 class="field-label">Response</h3>
+  <h4 class="field-label">Response</h4>
 
   <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
 
@@ -648,13 +719,12 @@
   
   <hr/>
   
-  <div class="method"><a id="tournamentsPost"></a>
-    <div class="method-path">
-    <pre class="post"><code class="huge" style="background-color: transparent;"><span class="http-method">post</span> /tournaments</code></pre></div>
+  <div class="method">
+    <h3 class="method-path" id="tournamentsPost"><span class="method-box post"><code><span class="http-method">post</span> /tournaments</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Creates a new tournament.</div>
 
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div class="field-items">
       <ul>
         <li style="padding-bottom: 15px;"><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
@@ -666,7 +736,7 @@
       </ul>
   </div>
 
-  <h3 class="field-label">Response</h3>
+  <h4 class="field-label">Response</h4>
   <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">201 - Created</p>
 
     <p style="margin-left: 20px;"><b>Example data</b></p>
@@ -687,19 +757,18 @@
   
   <hr/>
   
-    <div class="method"><a id="tournamentsTournamentIdDelete"></a>
-    <div class="method-path">
-    <pre class="delete"><code class="huge" style="background-color: transparent;"><span class="http-method">delete</span> /tournaments/{tournamentId}</code></pre></div>
+    <div class="method">
+    <h3 class="method-path" id="tournamentsTournamentIdDelete"><span class="method-box delete"><code><span class="http-method">delete</span> /tournaments/{tournamentId}</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Deletes a tournament by its ID.</div>
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div class="field-items">
       <ul>
         <li><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
       </ul>
   </div>
 
-    <h3 class="field-label">Response</h3>
+    <h4 class="field-label">Response</h4>
 
     <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">204 - Deleted</p>
     <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #f8c8c8; padding-left: 10px">404 - Not found</p>
@@ -709,17 +778,16 @@
 
   <hr/>
 
-    <div class="method"><a id="tournamentsTournamentIdGet"></a>
-    <div class="method-path">
-    <pre class="get"><code class="huge" style="background-color: transparent;"><span class="http-method">get</span> /tournaments/{tournamentId}</code></pre></div>
+    <div class="method">
+    <h3 class="method-path" id="tournamentsTournamentIdGet"><span class="method-box get"><code><span class="http-method">get</span> /tournaments/{tournamentId}</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Returns the details of a tournament by its ID.</div>
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div class="field-items">
       <div class="param">tournamentId (required)</div>
 
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div class="field-items">
       <ul>
         <li><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
@@ -727,7 +795,7 @@
   </div>
 
 
-  <h3 class="field-label">Response</h3>
+  <h4 class="field-label">Response</h4>
 
   <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
 
@@ -748,12 +816,11 @@
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-    <div class="method"><a id="tournamentsTournamentIdPut"></a></div>
-    <div class="method-path">
-    <pre class="put"><code class="huge" style="background-color: transparent;"><span class="http-method">put</span> /tournaments/{tournamentId}</code></pre></div>
+    <div class="method">
+    <h3 class="method-path" id="tournamentsTournamentIdPut"><span class="method-box put"><code><span class="http-method">put</span> /tournaments/{tournamentId}</code></span></h3>
     <div class="method-notes" style="font-size: 17px;">Updates an existing tournament by its ID.</div>
 
-    <h3 class="field-label">Request</h3>
+    <h4 class="field-label">Request</h4>
     <div class="field-items">
       <ul>
         <li style="padding-bottom: 15px;"><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
@@ -766,7 +833,7 @@
   </div>
 
 
-  <h3 class="field-label">Response</h3>
+  <h4 class="field-label">Response</h4>
 
   <p style="font-size: 12pt; font-family: Share Tech Mono; background-color: #cdfdc0; padding-left: 10px">200 - Success</p>
 
@@ -789,12 +856,12 @@
   </div> <!-- method -->
   <hr/>
 
-  <h2 id="__Models">Models</h2>
+  <h2 id="__Models" class="chapter">Models</h2>
   <p style="color:#3d0db1; padding: 0 0 0 20px;">[ Jump to <a href="#__Methods" style="color:#3d0db1;">Methods</a> ]</p>
 
 <h2 id="table-of-models" class="no-number">Table of contents</h2>
 
-<ol>
+<ol class="models-toc">
     <li><a href="#Match"><code>Match</code></a></li>
     <li><a href="#Player"><code>Player</code></a></li>
     <li><a href="#Tournament"><code>Tournament</code></a></li>
@@ -803,7 +870,7 @@
 
 
     <div class="model" style="padding: 0 0 0 0;"></div>
-    <h3 style="padding: 0 0 0 20px;"><a id="Match"><code>Match</code></a></h3>
+    <h3 class="model-heading" id="Match"><code>Match</code></h3>
       <div class="field-items" style="padding: 0 0 0 20px;">
         <ul>
             <li style="padding-bottom: 15px;"><div><code><b>matchId</b></code> (optional)<br>The ID of the match.<br><b>Type: </b>String<br><b>Example: </b><code>112233</code></div></li>
@@ -818,7 +885,7 @@
       </div>
 
       <div class="model" style="padding: 0 0 0 0;">
-      <h3 style="padding: 0 0 0 0;"><a id="Player"><code>Player</code></a></h3>
+      <h3 class="model-heading"  id="Player"><code>Player</code></h3>
         <div class="field-items">
           <ul>
             <li style="padding-bottom: 15px;"><div><code><b>playerId</b></code> (optional)<br>The ID of the player.<br><b>Type: </b>String<br><b>Example: </b><code>12345</code></div></li>
@@ -831,7 +898,7 @@
       </div>
 
   <div class="model;" style="padding: 0 0 0 0;">
-    <h3 style="padding: 0 0 0 0;"><a id="Tournament"><code>Tournament</code></a></h3>
+    <h3 class="model-heading" id="Tournament"><code>Tournament</code></h3>
     <div class="field-items">
         <ul>
           <li style="padding-bottom: 15px;"><div><code><b>tournamentId</b></code> (optional)<br>The ID of the tournament.<br><b>Type: </b>String<br><b>Example: </b><code>67890</code></div></li>
@@ -854,29 +921,30 @@
 
 		<!-- Footer -->
 
-    <div id="footer">
-      <footer class="major container medium">
-          <h2 style="font-family: 'Playfair Display';">Get in touch</h2>
-          <p>See my resume if you haven't already.<br>It contains my contact information and much more!</p>
-          <ul class="actions special">
-              <li><a href="https://koszoeva.github.io/cv" class="button">Check out my CV</a></li>
-          </ul>
-      </footer>
 
-  
-        <h2 style="font-family: 'Playfair Display'; padding-top: 40px;">Social links & other cool stuff</h2>
-        <ul class="icons">
-        <li><a href="mailto:koszoeva@yahoo.com" class="icon fa-envelope"></a></li>
-        <li><a href="https://www.linkedin.com/in/eva-koszo/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-        <li><a href="https://github.com/koszoeva" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-        <li><a href="https://www.youtube.com/@alohaandanarchy/" class="icon brands fa-youtube"><span class="label">Dribbble</span></a></li>
-        </ul>
-        
-        <ul class="copyright">
-        <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-        </ul>
-
-    </div>
+<div id="footer">
+<div class="footer-content">
+<footer class="footer-cta-block">
+<h2 class="footer-title">Get in touch</h2>
+<p>See my resume if you haven't already.<br>It contains my contact info and much more!</br></p>
+<ul class="actions special">
+<li><a class="button" href="https://koszoeva.github.io/cv">Check out my CV</a></li>
+</ul>
+</footer>
+<div class="footer-social-block">
+<h2 class="footer-title footer-title-secondary">Social links &amp; other cool stuff</h2>
+<ul class="icons">
+<li><a class="icon fa-solid fa-envelope" href="mailto:koszoeva@yahoo.com"><span class="label">Email</span></a></li>
+<li><a class="icon brands fa-linkedin" href="https://www.linkedin.com/in/eva-koszo/"><span class="label">LinkedIn</span></a></li>
+<li><a class="icon brands fa-github" href="https://github.com/koszoeva"><span class="label">GitHub</span></a></li>
+<li><a class="icon brands fa-youtube" href="https://www.youtube.com/@alohaandanarchy/"><span class="label">YouTube</span></a></li>
+</ul>
+</div>
+<ul class="copyright">
+<li>© Untitled. All rights reserved.</li><li>Design: Éva Kószó × ChatGPT</li>
+</ul>
+</div>
+</div>
 
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
