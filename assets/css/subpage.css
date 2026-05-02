@@ -455,7 +455,7 @@ body.subpage #header.subpage-header {
 .doc-screenshot {
   display: block;
   height: auto;
-  margin: var(--subpage-flow-space) auto;
+  margin: 30px;
 }
 
 .inline-icon {

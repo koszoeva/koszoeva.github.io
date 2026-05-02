@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 13 13">
+  <!-- Generator: Adobe Illustrator 30.3.0, SVG Export Plug-In . SVG Version: 2.1.3 Build 182)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #212121;
+      }
+    </style>
+  </defs>
+  <polygon class="st0" points="13 13 0 13 0 0 12.98 .02 13 13"/>
+  <image width="49" height="34" transform="translate(56.01 -35.18)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAjCAYAAADWtVmPAAAACXBIWXMAAAsSAAALEgHS3X78AAACw0lEQVRYhe2Y20sUURzHv+MOqPPg7kriZVlcddPWSkiwi5fsKcJ6KYICid5TKyJRM8jqpYgKuogV1oPWX5CWtyANNEMhSdcnN9TtIfG2Mq7LjPvtpSLQdNZ2dIn5wLyd7/mdD+cyhwP8JwgkudWD+FcEQRCitnoQ4cIQiTQMkUjDEIk0DJFIwxCJNAyRSEPUs3OS6O//hNu37mBwYBDBYPCvbTMy0lFeUYajx0oQExMTci3drvFLS0u4XncTL5tfAQAkSYLFYl61bSAQwPT0DAAgJ2c3njU+RXJykuZagiAIoA4oisqa6lrabQ4eOVzCkRE3g8HgmpmZmRlevHCJdpuDp0+V0ufzaa4HALqIfOzrZ7pjO08cP8nZ2VnNOUVRWFVZTbvNwXt372vOATpt9pbXLVBVFRXny2GxWDTnRFFEWfk5JCUloavzHebn5zVnwy4iy4twu0eRmJiIrKyskPPJKSnIzd2D8fEJTH2f0pzT7fg1maJgMoXevSiaECvFIhAIwO/3a86FXUQUTZAkCbK8CN+8L+S8LC/CO+mF2WzGtoQEzbmwi0RHR2Pf/r2Ym5tDW1s7fu5FeCe9uFJzFQsLC2vmh78MY2BgENnZLsTHW7UX3sChtC5e7zcWFRQz0+liV2cXVVVl3bUb6x6tHs9XHiw8xFR7Orvf92iup5sISba2vmFaqpN2m4M11bUcG/Ow8nLVChlFUTg25uHDB4/o2rGLdpuD9Y8b1v3v/ImuIiTZ29vHwvxi2m2OFd+Z0rOUZZlDn4eY6XTRbnMwLdXJ540vqKpqSHWATXhpXF5exsjwCDo6OtH2th1u9yji4uLQ8KQehUUFmJyYRFNTM/Ly8pBfcACSJIVcQ7crymr8Wmo7XTns6f4Q1r6BTbrGk4SqqLBarb9nItxs2iM2Sfj9/g0tnfUQBEEwXuMjDUMk0vgBun3Gt3CNX1QAAAAASUVORK5CYII="/>
+  <g>
+    <path class="st1" d="M8.53,10.74v-1.09c1.84,0,3.34-1.5,3.34-3.33s-1.5-3.34-3.34-3.34h-4.07c-1.84,0-3.33,1.5-3.33,3.34s1.5,3.33,3.33,3.33h.88v1.09h-.88C2.03,10.74.04,8.75.04,6.31S2.03,1.89,4.47,1.89h4.07c2.44,0,4.42,1.99,4.42,4.43s-1.99,4.42-4.42,4.42Z"/>
+    <polygon class="st1" points="5.03 12.58 5.03 7.81 7.41 10.19 5.03 12.58"/>
+  </g>
+</svg>
