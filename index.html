@@ -31,8 +31,9 @@
 <section class="about-section page-shell page-auto">
   <div class="page-frame about-card">
     <div class="about-layout-stacked">
-      <div class="about-photo-panel" >
-        <img src="images/me.svg">
+      <div class="about-photo-panel">
+        <img class="about-image about-image-standard" src="images/me.svg" alt="Portrait illustration of Éva Kószó">
+        <img class="about-image about-image-fun" src="images/me-fun.png" alt="Fun portrait illustration of Éva Kószó" hidden style="padding-top: 60px;">
       </div>
 
       <div class="about-content-stack">
@@ -40,16 +41,59 @@
           <div class="section-heading">
             <h2>About me</h2>
           </div>
-          <div class="about-copy">
+
+          <div class="about-copy about-copy-standard">
             <p>I’m a senior technical writer and illustrator with 9 years of experience making complex software and telecom products easier to understand.
             My core strengths are <span class="ubuntu-underline">API documentation, user guides, technical visuals, and docs-as-code workflows</span>. I like bringing structure to messy content and turning complicated topics into something clear and usable.</p>
             <p>I like learning new tools and staying current with emerging technologies. <span class="ubuntu-underline">From improving workflows to creating custom AI scripts for repetitive tasks, I’m always looking for smarter ways to work.</span></p>
             <p>Alongside my full-time work, <span class="ubuntu-underline">I also contribute to AI training projects</span>, helping improve multilingual LLM outputs and reviewing content for clarity, accuracy, and consistency.
             Outside of tech, I work as a professional snooker referee. It has strengthened my focus, fairness, and calm decision-making under pressure.</p>
           </div>
+
+          <pre class="about-copy about-copy-fun about-code-block" hidden><code>[ METADATA ]
+born_in               : Hungary
+relocated_to_NL       : to update environment variables
+age                   : remembers the sound of dial-up internet
+
+[ LEGACY VERSION ]
+raised_on             : GTA 2, TIE Fighter, dad jokes
+childhood_crush       : Darth Vader
+still_applies         : debatable
+beach_activity_as_kid : self-appointed ladybug lifeguard (unpaid)
+
+[ RUNTIME CONFIG ]
+coffee_before_thinking: yes
+favorite_season       : spring (chilly, sunny, full of flowers)
+favorite_weather      : sunny under dark storm clouds
+rain_protocol         : spare outfit + towel, packed waterproof
+
+[ USER PREFERENCES ]
+pasta_shape           : handmade, slightly amorphous / anything ready in 5 minutes
+cereal_consistency    : crunchy (max 20 seconds in milk)
+music                 : noisy and rebellious
+outfit                : any color, as long as it's black
+
+[ KNOWN VULNERABILITIES ]
+weaknesses            : stationery, confectionery
+optimism_level        : task_final_FINAL.extension
+
+[ TRANSPORT ]
+license               : N/A
+getting_around        : bike, small sailing boat (no engine required)
+
+[ CAPABILITIES ]
+can_spot              : inconsistent spacing, instantly
+can_fix               : almost anything with whatever is available (Apollo 13 mindset)
+
+>> status : looking for a problem worth solving
+
+</code></pre>
         </div>
 
-        <div class="about-cta-wrap"><a class="portfolio-cta" href="https://koszoeva.github.io/cv" target="_blank" rel="noopener noreferrer">Check out my CV</a></div>
+        <div class="about-actions">
+          <button class="portfolio-cta about-toggle" type="button" aria-pressed="false">✨ Want the fun version? ✨</button>
+          <a class="portfolio-cta" href="https://koszoeva.github.io/cv" target="_blank" rel="noopener noreferrer">Check out my CV</a>
+        </div>
       </div>
     </div>
   </div>
@@ -271,6 +315,30 @@ This project was completed in approximately 10 hours and is intended to showcase
     </ul>
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.querySelector('.about-toggle');
+  const standardCopy = document.querySelector('.about-copy-standard');
+  const funCopy = document.querySelector('.about-copy-fun');
+  const standardImage = document.querySelector('.about-image-standard');
+  const funImage = document.querySelector('.about-image-fun');
+
+  if (!toggle || !standardCopy || !funCopy || !standardImage || !funImage) return;
+
+  toggle.addEventListener('click', function () {
+    const showFun = funCopy.hasAttribute('hidden');
+
+    standardCopy.hidden = showFun;
+    funCopy.hidden = !showFun;
+    standardImage.hidden = showFun;
+    funImage.hidden = !showFun;
+
+    toggle.setAttribute('aria-pressed', String(showFun));
+    toggle.textContent = showFun ? '← Back to the professional version' : '✨ Want the fun version? ✨';
+  });
+});
+</script>
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
