@@ -1996,6 +1996,7 @@ input[type="button"].small,
 
   .about-layout-stacked {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .about-photo-panel {
@@ -2265,11 +2266,15 @@ input[type="button"].small,
 }
 
 .about-code-block {
+  display: block;
   width: 100%;
-  max-width: 60rem;
+  max-width: 100%;
+  min-width: 0;
   margin: 0;
   padding: 1.25rem 1.35rem;
   overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   border-radius: 0.35rem;
   background: #e6dcff;
   color: var(--ink);
@@ -2282,6 +2287,8 @@ input[type="button"].small,
 
 .about-code-block code {
   display: block;
+  width: max-content;
+  min-width: 100%;
   font-family: var(--font-mono);
   font-size: clamp(0.78rem, 0.72rem + 0.25vw, 0.95rem);
   line-height: 1.45;
@@ -2295,6 +2302,10 @@ input[type="button"].small,
 
   .about-actions .portfolio-cta {
     width: 100%;
-    max-width: 22rem;
+    max-width: 18rem;
+    min-width: 0;
+    min-height: 2.65rem;
+    padding: 0.65rem 1rem;
+    font-size: 0.78rem;
   }
 }
