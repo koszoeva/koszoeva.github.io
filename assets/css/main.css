@@ -2273,7 +2273,7 @@ input[type="button"].small,
   margin: 0;
   padding: 1.25rem 1.35rem;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   border-radius: 0.35rem;
   background: #e6dcff;
@@ -2302,10 +2302,7 @@ input[type="button"].small,
 
   .about-actions .portfolio-cta {
     width: 100%;
-    max-width: 18rem;
-    min-width: 0;
+    max-width: 22rem;
     min-height: 2.65rem;
-    padding: 0.65rem 1rem;
-    font-size: 0.78rem;
   }
 }
