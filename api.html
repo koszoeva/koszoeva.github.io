@@ -265,60 +265,73 @@
    Mobile screen
    ========================================================== */
 
-
 @media screen and (max-width: 736px) {
 
   .api-guide {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    box-sizing: border-box;
     font-size: 15px;
   }
 
-  .api-guide h1 {
-    padding-left: 0;
+  .api-guide * {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .api-guide .method {
     margin-left: 0;
     margin-right: 0;
+    min-width: 0;
   }
 
   .api-guide .method-path {
+    display: flex;
     align-items: flex-start;
     gap: 0.5rem;
+    min-width: 0;
     font-size: 1em;
   }
 
+  .api-guide .method-path::before {
+    flex: 0 0 auto;
+  }
+
   .api-guide .method-box {
-    width: 100%;
-    box-sizing: border-box;
-    white-space: normal;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
   }
 
   .api-guide .method-box code {
     white-space: normal;
     overflow-wrap: anywhere;
-  }
-
-  .api-guide .response-status {
-    margin-left: 0;
-    margin-right: 0;
+    word-break: break-word;
   }
 
   .api-guide pre.example {
+    width: 100%;
+    max-width: 100%;
     margin-left: 0;
     overflow-x: auto;
   }
 
-  .api-guide .example-label {
-    margin-left: 0;
+  .api-guide pre.example code {
+    white-space: pre;
   }
 
+  .api-guide .response-status,
+  .api-guide .example-label,
   .api-guide .model {
     margin-left: 0;
+    margin-right: 0;
   }
 }
+
       </style>
 
 <!-- API methods -->
