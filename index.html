@@ -324,6 +324,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const standardImage = document.querySelector('.about-image-standard');
   const funImage = document.querySelector('.about-image-fun');
   const aboutSection = document.querySelector('.about-section');
+  const aboutCard = document.querySelector('.about-card');
 
   if (!toggle || !standardCopy || !funCopy || !standardImage || !funImage || !aboutSection) return;
 
@@ -335,6 +336,7 @@ document.addEventListener('DOMContentLoaded', function () {
     standardImage.hidden = showFun;
     funImage.hidden = !showFun;
     aboutSection.classList.toggle('about-section-fun', showFun);
+    aboutCard.classList.toggle('about-is-fun', showFun);
 
     toggle.setAttribute('aria-pressed', String(showFun));
     toggle.textContent = showFun ? '← Back to the professional version' : '✨ Want the fun version? ✨';

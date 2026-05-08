@@ -2329,3 +2329,42 @@ input[type="button"].small,
     min-height: 2.65rem;
   }
 }
+
+/* Fun About mobile fix only */
+@media screen and (max-width: 736px) {
+  .about-card.about-is-fun .about-layout-stacked {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card.about-is-fun .about-photo-panel {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto 1.25rem;
+    justify-self: center;
+  }
+
+  .about-card.about-is-fun .about-image-fun {
+    width: 100%;
+    height: auto;
+  }
+
+  .about-card.about-is-fun .about-code-block {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: pre;
+  }
+
+  .about-card.about-is-fun .about-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-card.about-is-fun .portfolio-cta {
+    width: 100%;
+    max-width: 22rem;
+  }
+}
