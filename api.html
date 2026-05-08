@@ -261,6 +261,64 @@
   margin-left: 20px;
 }
 
+/* ==========================================================
+   Mobile screen
+   ========================================================== */
+
+
+@media screen and (max-width: 736px) {
+
+  .api-guide {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-size: 15px;
+  }
+
+  .api-guide h1 {
+    padding-left: 0;
+  }
+
+  .api-guide .method {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .api-guide .method-path {
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 1em;
+  }
+
+  .api-guide .method-box {
+    width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+  }
+
+  .api-guide .method-box code {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .api-guide .response-status {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .api-guide pre.example {
+    margin-left: 0;
+    overflow-x: auto;
+  }
+
+  .api-guide .example-label {
+    margin-left: 0;
+  }
+
+  .api-guide .model {
+    margin-left: 0;
+  }
+}
       </style>
 
 <!-- API methods -->
