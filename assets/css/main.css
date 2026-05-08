@@ -2368,3 +2368,27 @@ input[type="button"].small,
     max-width: 22rem;
   }
 }
+
+  @media screen and (max-width: 736px) {
+  .about-card.about-is-fun .about-content-stack,
+  .about-card.about-is-fun .about-copy-block,
+  .about-card.about-is-fun .about-code-block {
+    min-width: 0;
+  }
+
+  .about-card.about-is-fun .about-code-block {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .about-card.about-is-fun .about-code-block code {
+    display: block;
+    width: max-content;
+    min-width: 100%;
+  }
+}
+
