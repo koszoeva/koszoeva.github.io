@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>Send files | Éva Kószó</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta name="robots" content="noindex, nofollow"/>
+<link href="../assets/css/main.css" rel="stylesheet"/>
+<link href="../images/favicon.svg" rel="icon" type="image/svg+xml"/>
+<style>
+  .drop-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px 16px;
+  }
+
+  .drop-card {
+    width: min(560px, 100%);
+    padding: clamp(28px, 5vw, 48px);
+    background: var(--white);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .drop-card h2 {
+    color: var(--primary);
+    font-family: var(--font-heading);
+  }
+
+  .drop-card p {
+    margin-bottom: 1.5rem;
+  }
+
+  .drop-zone {
+    display: block;
+    padding: 2rem 1rem;
+    border: 2px dashed var(--secondary);
+    border-radius: var(--radius-md);
+    background: var(--surface-warm);
+    text-align: center;
+    cursor: pointer;
+    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  }
+
+  .drop-zone:hover,
+  .drop-zone.is-dragover {
+    border-color: var(--primary);
+    background: var(--surface);
+  }
+
+  .drop-zone input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .drop-zone-label {
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .drop-zone-files {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+
+  .drop-actions {
+    margin-top: 1.5rem;
+  }
+
+  .drop-actions .portfolio-cta[disabled] {
+    opacity: 0.6;
+    cursor: wait;
+  }
+
+  .drop-form {
+    margin: 0;
+  }
+
+  .drop-card .drop-status {
+    margin: 1rem 0 0;
+    min-height: 1.7em;
+    font-weight: 500;
+  }
+
+  .drop-status.is-error {
+    color: #b3261e;
+  }
+
+  .drop-status.is-success {
+    color: var(--primary);
+  }
+</style>
+</head>
+<body>
+<main class="drop-page">
+  <div class="drop-card">
+    <div class="section-heading">
+      <h2>Send me files</h2>
+    </div>
+    <p>Pick or drop your files below, then hit send. Documents and images, up to 10 files, 10 MB each.</p>
+
+    <!-- Files go to the "Website file uploads" Google Apps Script, which saves them to Google Drive. -->
+    <form class="drop-form" action="https://script.google.com/macros/s/AKfycbwDcTfXkBH0BZ8p1tIaoH9XDD33XZR4kAMS1H_CBG0gX1T57bjp3f9323PkylKfX7lWpw/exec" method="POST">
+      <label class="drop-zone">
+        <input type="file" name="upload" multiple required accept=".pdf,.doc,.docx,.odt,.rtf,.txt,.md,.xls,.xlsx,.ods,.csv,.ppt,.pptx,.odp,.svg,.png,.jpg,.jpeg,.gif,.webp,.ai,.eps,.zip">
+        <span class="drop-zone-label">Choose files or drag them here</span>
+        <span class="drop-zone-files">No files selected</span>
+      </label>
+
+      <div class="drop-actions">
+        <button class="portfolio-cta" type="submit">Send</button>
+      </div>
+      <p class="drop-status" role="status"></p>
+    </form>
+  </div>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const MAX_FILES = 10;
+  const MAX_FILE_BYTES = 10 * 1024 * 1024;
+  const form = document.querySelector('.drop-form');
+  const zone = form.querySelector('.drop-zone');
+  const input = form.querySelector('input[type="file"]');
+  const fileList = form.querySelector('.drop-zone-files');
+  const button = form.querySelector('button[type="submit"]');
+  const status = form.querySelector('.drop-status');
+
+  function showFiles() {
+    const names = Array.from(input.files).map(function (file) { return file.name; });
+    fileList.textContent = names.length ? names.join(', ') : 'No files selected';
+  }
+
+  function setStatus(text, type) {
+    status.textContent = text;
+    status.className = 'drop-status' + (type ? ' is-' + type : '');
+  }
+
+  input.addEventListener('change', showFiles);
+
+  ['dragenter', 'dragover'].forEach(function (name) {
+    zone.addEventListener(name, function (event) {
+      event.preventDefault();
+      zone.classList.add('is-dragover');
+    });
+  });
+
+  ['dragleave', 'drop'].forEach(function (name) {
+    zone.addEventListener(name, function () {
+      zone.classList.remove('is-dragover');
+    });
+  });
+
+  zone.addEventListener('drop', function (event) {
+    event.preventDefault();
+    input.files = event.dataTransfer.files;
+    showFiles();
+  });
+
+  function readFile(file) {
+    return new Promise(function (resolve, reject) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        resolve({ name: file.name, type: file.type, data: reader.result.split(',')[1] });
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const files = Array.from(input.files);
+    if (files.length > MAX_FILES) {
+      setStatus('Please send at most ' + MAX_FILES + ' files at once.', 'error');
+      return;
+    }
+    const tooBig = files.find(function (file) { return file.size > MAX_FILE_BYTES; });
+    if (tooBig) {
+      setStatus(tooBig.name + ' is too big. Files must be under 10 MB.', 'error');
+      return;
+    }
+
+    button.disabled = true;
+    setStatus('Sending…');
+
+    try {
+      const payload = { files: await Promise.all(files.map(readFile)) };
+      // text/plain keeps this a simple request, which Apps Script accepts without a CORS preflight.
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' }
+      });
+      const data = await response.json().catch(function () { return {}; });
+
+      if (response.ok && data.ok) {
+        form.reset();
+        showFiles();
+        setStatus('Thanks! Your files have been sent.', 'success');
+      } else {
+        setStatus(data.message || 'Something went wrong. Please try again.', 'error');
+      }
+    } catch (error) {
+      setStatus('Network error. Please try again.', 'error');
+    } finally {
+      button.disabled = false;
+    }
+  });
+});
+</script>
+</body>
+</html>
